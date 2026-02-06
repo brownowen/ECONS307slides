@@ -1,7 +1,31 @@
-.Rproj.user
+# R and system files
+.Rproj.user/
 .Rhistory
 .RData
 .Ruserdata
 
+# Quarto cache
 /.quarto/
-**/*.quarto_ipynb
+*_cache/
+*_files/
+_freeze/
+
+# Keep only essential files for GitHub Pages
+/*.R
+/*.aux
+/*.log
+/*.tex
+/*.qmd
+/econs307/
+/images/
+/*.png
+/Teachingcontent.Rproj
+/lib.R
+/core_code.R
+/data_forProj.R
+/hello.*
+
+# Allow these
+!.gitignore
+!_quarto.yml
+!ref.bibtex
