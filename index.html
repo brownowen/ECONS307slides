@@ -526,6 +526,23 @@ Prix_i = \alpha_0 + \beta_1 \cdot Puissance_i  + \beta_2 \cdot Poids_i
 <p>Qu’avons nous comme outil pour évaluer s’il y a une potentielle erreur de mesure ? Comparons l’hétéroscédasticité (<span class="math inline">\(\sigma^2\)</span>) des deux modèles:</p>
 <div style="text-align: center">
 <div class="cell">
+<<<<<<< HEAD
+=======
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">library</span>(plotly)</span>
+<span id="cb7-2"><a href=""></a><span class="co">#| fig-height: 4.5</span></span>
+<span id="cb7-3"><a href=""></a><span class="co">#| fig-width: 12</span></span>
+<span id="cb7-4"><a href=""></a>data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">poids=</span>dta<span class="sc">$</span>poids,</span>
+<span id="cb7-5"><a href=""></a>               <span class="at">res1=</span>reg<span class="sc">$</span>residuals<span class="sc">^</span><span class="dv">2</span>,</span>
+<span id="cb7-6"><a href=""></a>               <span class="at">res2=</span>reg2<span class="sc">$</span>residuals<span class="sc">^</span><span class="dv">2</span>,</span>
+<span id="cb7-7"><a href=""></a>               <span class="at">puissance=</span>dta<span class="sc">$</span>puissance) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-8"><a href=""></a>  <span class="fu">pivot_longer</span>(<span class="at">cols=</span><span class="fu">c</span>(res1,res2), <span class="at">names_to =</span> <span class="st">"group"</span>,<span class="at">values_to =</span> <span class="st">"residuals"</span>)</span>
+<span id="cb7-9"><a href=""></a>data <span class="sc">%&gt;%</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>poids,<span class="at">y=</span>residuals))<span class="sc">+</span></span>
+<span id="cb7-10"><a href=""></a>  <span class="fu">geom_point</span>(<span class="at">color=</span><span class="st">"steelblue"</span>)<span class="sc">+</span></span>
+<span id="cb7-11"><a href=""></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>group,<span class="at">labeller =</span> <span class="fu">labeller</span>(<span class="at">group =</span> </span>
+<span id="cb7-12"><a href=""></a>    <span class="fu">c</span>(<span class="st">"res1"</span> <span class="ot">=</span> <span class="st">"Modèle 1"</span>,</span>
+<span id="cb7-13"><a href=""></a>      <span class="st">"res2"</span> <span class="ot">=</span> <span class="st">"Modèle 2"</span>)))<span class="sc">+</span></span>
+<span id="cb7-14"><a href=""></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Comparaison de modèles - Carré des résidus "</span>)  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+>>>>>>> 0ea6f5752bad99e51a8282b89613addb3dd27e96
 <div class="cell-output-display">
 <div>
 <figure>
@@ -620,7 +637,11 @@ Prix_i = \alpha_0 + \beta_1 \cdot Puissance_i  + \beta_2 \cdot Poids_i
 <h2>Jeu de donnée</h2>
 <p>Après la récolte automatisée ainsi que le nettoyage des données, nous obtenons un jeu tel que suit :</p>
 <div class="cell scrollable">
+<<<<<<< HEAD
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a>phonesdf <span class="sc">%&gt;%</span> <span class="fu">print</span>(<span class="at">n=</span><span class="dv">28</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+=======
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a>phonesdf <span class="sc">%&gt;%</span> <span class="fu">print</span>(<span class="at">n=</span><span class="dv">28</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+>>>>>>> 0ea6f5752bad99e51a8282b89613addb3dd27e96
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 28 × 14
    Produit price `Qualité de la caméra` `Année d'introduction` Marque   Garantie
@@ -678,12 +699,21 @@ Prix_{i,m} =\;&amp; \alpha_m
 <section id="notre-régression-hédonique---ii" class="slide level2">
 <h2>Notre régression hédonique - II</h2>
 <div class="cell">
+<<<<<<< HEAD
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a>preg2 <span class="ot">&lt;-</span> <span class="fu">linear_reg</span>() <span class="sc">%&gt;%</span> <span class="fu">set_engine</span>(<span class="st">"lm"</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb9-2"><a href=""></a>  <span class="fu">fit</span>( price<span class="sc">~</span> Poids <span class="sc">+</span> megapixels <span class="sc">+</span> <span class="fu">factor</span>(age) <span class="sc">+</span> RAM <span class="sc">+</span> </span>
 <span id="cb9-3"><a href=""></a>         stockage <span class="sc">+</span> (<span class="st">`</span><span class="at">Qualité de la caméra</span><span class="st">`</span>)<span class="sc">+</span>(Marque), <span class="at">data =</span> phonesdf) </span>
 <span id="cb9-4"><a href=""></a></span>
 <span id="cb9-5"><a href=""></a>preg2 <span class="sc">%&gt;%</span> tidy <span class="sc">%&gt;%</span> <span class="fu">kbl</span>() <span class="sc">%&gt;%</span> <span class="fu">kable_styling</span>(<span class="at">full_width =</span> F,<span class="at">font_size =</span> <span class="dv">20</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb9-6"><a href=""></a>   <span class="fu">row_spec</span>(<span class="fu">c</span>(<span class="dv">10</span><span class="sc">:</span><span class="dv">12</span>),<span class="at">background =</span> <span class="st">"steelblue1"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+=======
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href=""></a>preg2 <span class="ot">&lt;-</span> <span class="fu">linear_reg</span>() <span class="sc">%&gt;%</span> <span class="fu">set_engine</span>(<span class="st">"lm"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-2"><a href=""></a>  <span class="fu">fit</span>( price<span class="sc">~</span> Poids <span class="sc">+</span> megapixels <span class="sc">+</span> <span class="fu">factor</span>(age) <span class="sc">+</span> RAM <span class="sc">+</span> </span>
+<span id="cb10-3"><a href=""></a>         stockage <span class="sc">+</span> (<span class="st">`</span><span class="at">Qualité de la caméra</span><span class="st">`</span>)<span class="sc">+</span>(Marque), <span class="at">data =</span> phonesdf) </span>
+<span id="cb10-4"><a href=""></a></span>
+<span id="cb10-5"><a href=""></a>preg2 <span class="sc">%&gt;%</span> tidy <span class="sc">%&gt;%</span> <span class="fu">kbl</span>() <span class="sc">%&gt;%</span> <span class="fu">kable_styling</span>(<span class="at">full_width =</span> F,<span class="at">font_size =</span> <span class="dv">20</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb10-6"><a href=""></a>   <span class="fu">row_spec</span>(<span class="fu">c</span>(<span class="dv">10</span><span class="sc">:</span><span class="dv">12</span>),<span class="at">background =</span> <span class="st">"steelblue1"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+>>>>>>> 0ea6f5752bad99e51a8282b89613addb3dd27e96
 <div class="cell-output-display">
 <table class="table caption-top" style="font-size: 20px; width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
@@ -1371,4 +1401,8 @@ Wooldridge, Jeffrey M. 2015. <em>Introduction à l’économétrie: Une Approche
               </script>
     
 
+<<<<<<< HEAD
 </body></html>
+=======
+</body></html>
+>>>>>>> 0ea6f5752bad99e51a8282b89613addb3dd27e96
