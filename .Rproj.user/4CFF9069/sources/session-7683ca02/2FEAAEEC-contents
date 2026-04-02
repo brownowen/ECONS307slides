@@ -1,0 +1,16 @@
+---
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "My Research"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: slides/index.qmd
+        text: Presentation
+      - href: projet-b/index.qmd
+        text: Project B
+---

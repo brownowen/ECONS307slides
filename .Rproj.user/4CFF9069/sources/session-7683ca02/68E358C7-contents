@@ -1,0 +1,12 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "My Research"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: slides/hello.qmd
+        text: Presentation

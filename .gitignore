@@ -1,0 +1,11 @@
+/.quarto/
+/_freeze/
+/hello_cache/
+/Teachingcontent_cache/
+*.aux
+*.log
+*.tex
+.RData
+.RDataTmp
+docs/
+**/*.quarto_ipynb

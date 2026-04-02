@@ -1,0 +1,50 @@
+#| label: setup
+#| include: false
+library(tidyverse)
+smaller <- diamonds |>
+filter(carat <= 2.5)
+#| label: plot-smaller-diamonds
+#| echo: false
+smaller |>
+ggplot(aes(x = carat)) +
+geom_freqpoly(binwidth = 0.01)
+smaller |>
+ggplot(aes(x = carat)) +
+geom_freqpoly(binwidth = 0.11)
+smaller |>
+ggplot(aes(x = carat)) +
+geom_freqpoly(binwidth = 0.1)
+#| label: setup
+#| include: false
+library(tidyverse)
+smaller <- diamonds |>
+filter(carat <= 2.5)
+#| label: plot-smaller-diamonds
+#| echo: true
+smaller |>
+ggplot(aes(x = carat)) +
+geom_freqpoly(binwidth = 0.01)
+#| label: plot-smaller-diamonds
+#| echo: true
+smaller |>
+ggplot(aes(x = carat)) +
+geom_freqpoly(binwidth = 0.001)
+#| label: plot-smaller-diamonds
+#| echo: true
+smaller |>
+ggplot(aes(x = carat)) +
+geom_freqpoly(binwidth = 0.001)
+#| label: setup
+#| include: false
+library(tidyverse)
+smaller <- diamonds |>
+filter(carat <= 2.5)
+#| label: plot-smaller-diamonds
+#| echo: true
+smaller |>
+ggplot(aes(x = carat)) +
+geom_freqpoly(binwidth = 0.001)
+quarto render yourfile.qmd --to html,pdf
+---
+title: "Diamond sizes"
+install.packages("xfun")
