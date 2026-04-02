@@ -3,10 +3,10 @@ project:
   output-dir: docs
 
 website:
-  title: "My Research"
+  title: "ECONS-307"
   navbar:
     left:
       - href: index.qmd
         text: Home
       - href: slides/index.html
-        text: Presentation
+        text: Séance d'introduction
