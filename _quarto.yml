@@ -8,5 +8,5 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - href: slides/hello.qmd
+      - href: slides/index.html
         text: Presentation

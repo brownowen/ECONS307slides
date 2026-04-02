@@ -8,5 +8,4 @@
 .RData
 .Rproj.user/
 .RDataTmp
-docs/
 **/*.quarto_ipynb

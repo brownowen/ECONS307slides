@@ -24,8 +24,7 @@ format:
     margin: 0.075
     slide-number: true
     pdf: true
-  html: 
-    fig-format: png
+  
 ---
 
 ```{r, verbose = FALSE}
