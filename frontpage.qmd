@@ -1,5 +1,0 @@
----
-title: "frontpage"
-format: html
-editor: visual
----
