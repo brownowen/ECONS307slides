@@ -1,9 +1,0 @@
-### Simple reg
-lm(formula=survival_binary~abcix,data=lindner) %>% tidy
-
-
-### Odds ratio
-fml <- survival_binary~abcix
-glm(fml,data=lindner,family=binomial()) %>% tidy
-
-

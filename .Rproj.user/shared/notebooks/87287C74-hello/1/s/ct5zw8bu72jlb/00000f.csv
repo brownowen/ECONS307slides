@@ -1,7 +1,0 @@
-"0","#| echo: true"
-"0","#| fig-width: 10"
-"0","#| fig-height: 4.5"
-"0","library(ggplot2)"
-"0","ggplot(mtcars, aes(hp, mpg, color = am)) +"
-"0","  geom_point() +"
-"0","  geom_smooth(formula = y ~ x, method = ""loess"")"
