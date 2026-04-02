@@ -1,5 +1,6 @@
 # Cleaning dataphones dataset
-df <- read.csv("C:/Users/user/PyCharmMiscProject/dataphones.csv")
+source('slides/lib.R')
+df <- read.csv("slides/dataphones.csv")
 
 urlqr <- qr_code("https://brownowen.github.io/ECONS307slides/#/title-slide")
 generate_svg(urlqr,"qrgithub.svg",size=400)

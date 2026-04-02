@@ -3,6 +3,7 @@ title: "Séminaire d'économie appliquée - Partie Prix"
 format: html
 ---
 
-Hello World! Welcome to my research portal.
+La plateforme présente a pour objectif d'accompagner les étudiant$\cdot$es dans la réalisation du travail de ce séminaire.
 
-- [Presentation](slides/index.html)
+- [Séance d'introduction](slides/index.html): durant cette séance, nous discutons de l'a
+- []
