@@ -235,7 +235,7 @@
     "href": "index.html",
     "title": "Séminaire d’économie appliquée - Partie Prix",
     "section": "",
-    "text": "La plateforme présente a pour objectif d’accompagner les étudiant\\(\\cdot\\)es dans la réalisation du travail de ce séminaire.\n\nSéance d’introduction: durant cette séance, nous discutons de l’a\nIntro à R"
+    "text": "La plateforme présente a pour objectif d’accompagner les étudiant\\(\\cdot\\)es dans la réalisation du travail de ce séminaire.\n\nSéance d’introduction: lors de cette séance, nous discutons l’objectif du projet, sa structure, les échéances de remises intermédiaires et finales ainsi que de consignes encadrant la réalisation du projet (utilisation d’IA, méthode de récolte de données,application, etc.)\nIntro à R"
   },
   {
     "objectID": "R_intro/intro_R.html",
@@ -249,6 +249,13 @@
     "href": "R_intro/intro_R.html#un-langage-de-programmation",
     "title": "Introduction à R",
     "section": "Un langage de programmation",
-    "text": "Un langage de programmation\nUn langage de programmation est un outil qui nous permet de communiquer avec un ordinateur afin de lui faire exécuter des tâches. Il existe divers langages de programmation selon les objectifs dressés. Dans notre cas, nous souhaitons exécuter des opérations mathématiques et statistiques: nous nous orienterons donc vers un langage de programmation à tel but.\nIl existe une variété dans langages de programmation: R, STATA,"
+    "text": "Un langage de programmation\nUn langage de programmation est un outil qui nous permet de communiquer avec un ordinateur afin de lui faire exécuter des tâches. Il existe divers langages de programmation conçus selon les objectifs dressés. Dans notre cas, nous souhaitons exécuter des opérations mathématiques et statistiques: nous nous orienterons donc vers un langage de programmation à tel but. Ces langages de programmation permettent donc de traiter des données et de produire des statistiques descriptives, des graphiques, des cartes et bien sûr des régressions.\nParmi l’ensemble des langages, R présente plusieurs avantages:\n\nR est un langage open-soure. Le logiciel est gratuit et quiconque peut disposer du code afin de l’améliorer ou d’en proposer des variantes.\nR présente une importante communauté d’utilisateur\\(\\cdot\\)ices qui contribue à la résolution de problème et à l’évolution du langage.\nLa littérature économétrique contribue fréquemment à l’intégration de nouvelles méthodes àR. Les techniques économétriques de pointes y sont généralement accessibles.\nmange du pain"
+  },
+  {
+    "objectID": "R_intro/intro_R.html#une-librairie",
+    "href": "R_intro/intro_R.html#une-librairie",
+    "title": "Introduction à R",
+    "section": "Une librairie",
+    "text": "Une librairie"
   }
 ]
