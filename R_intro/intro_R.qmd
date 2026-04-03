@@ -2,6 +2,7 @@
 title: "Introduction à R"
 format: html
 editor: visual
+toc: true
 ---
 
 ```{r}
@@ -81,8 +82,8 @@ primitif de `R`.Le langage de programmation `R` est utilisable avec un
 ensemble de fonctions que l'on appelle *base functions*. Ces fonctions
 de base permettent de réaliser des opérations fondamentales. Outre ces
 fonctions, il existe une syntaxe basique qui nous permet d'interagir
-avec des objets statistiques. Prenons l'example d'une base de données
-nommée automobile `mtcars`. Elle est consitutée de 32 observations (32
+avec des objets de `R`. Prenons l'example d'une base de données d'automobiles,
+nommée `mtcars`. Elle est consitutée de 32 observations (32
 modèles) et de 11 variables. L'objet de base de données pour `R` est le
 `data.frame`.
 
@@ -110,7 +111,47 @@ ajouter une deuxième couche de filtre en réemployant des crochets:
 mtcars[5:9,c(2,4,6)][which(mtcars[5:9,"wt"]>3.4),]
 ```
 
-L'exercice devient laborieux et très rapidement illisible. `Tidyverse` est une librairie qui permet, entre autre, d'interagir beaucoup plus simplement avec des `data.frame`.
+L'exercice devient laborieux et très rapidement illisible. `Tidyverse` est une librairie qui permet, entre autre, d'interagir beaucoup plus simplement avec des `data.frame`. Utiliser une librairie nécessite deux étapes:
+
+  1. Installer la librairie
+  2. Charger la librairie
+  
+Il ne faut installer la librairie qu'une seule fois sur sa machine. En revanche, il sera nécessaire de charger une librairie à chaque fois que l'on redémarre `R`. Dans votre script, rédigez:
+
+```{r,eval=FALSE} 
+
+install.packages("tidyverse") # Installation de la librairie sur la machine
+library('tidyverse') # Chargement de la librairie dans la session
+```
+
+Pour exécuter ce code, cliquez sur `Run` en haut à droite dans le cadran 1. Ceci exécutera l'intégralité du code contenu dans votre script. Si vous souhaitez exécuter partiellement votre code, sélectionnez le morceau de code en question avec votre curseur et composez `CTRL + Enter`. Votre console devrait afficher:
+```{r,warning=FALSE,message=TRUE, echo=FALSE} 
+
+#install.packages("tidyverse") # Installation de la librairie sur la machine
+library('tidyverse') # Chargement de la librairie dans la session
+```
+
+Il est désormais possible de recourir aux outils du `Tidyverse`. Le premier outil que nous allons voir est le ***pipe*** `%>%`. Il permet d'alléger la rédaction de transformation de données ainsi que sa lecture.
+
+Grâce au pipe, il sera possible de lire et interpréter le fonctionnement d'un code de gauche à droite, en le combinant avec diverses fonctions. Reprenons l'exemple précédent dans lequel nous sélectionnions des modèles selon la condition $wt>3.4$. En base `R`, nous rédigions:
+
+```{r,eval=FALSE}
+mtcars[5:9,c(2,4,6)][which(mtcars[5:9,"wt"]>3.4),]
+``` 
+
+Nous procédions à 3 opérations: *(i)* couper certaines rangées du `data.frame`, *(ii)* sélectionner 3 variables et *(iii)* filtrer conditionnellement les observations. Grâce aux outils du `tidyverse`, ceci peut être fait de la façon suivante:
+```{r}
+mtcars %>% slice(5:9) %>% select(cyl,hp,wt) %>% filter(wt>3.4)
+```
+
+Beaucoup plus lisible !
+
+
+
+
+
+
+
 
 
 

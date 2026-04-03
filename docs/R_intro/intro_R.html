@@ -136,7 +136,7 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -174,7 +174,20 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#un-langage-de-programmation" id="toc-un-langage-de-programmation" class="nav-link active" data-scroll-target="#un-langage-de-programmation">Un langage de programmation</a></li>
+  <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio">Rstudio</a>
+  <ul class="collapse">
+  <li><a href="#créer-un-espace-de-travail-sur-rstudio" id="toc-créer-un-espace-de-travail-sur-rstudio" class="nav-link" data-scroll-target="#créer-un-espace-de-travail-sur-rstudio">Créer un espace de travail sur <strong>Rstudio</strong></a></li>
+  </ul></li>
+  <li><a href="#une-librairie" id="toc-une-librairie" class="nav-link" data-scroll-target="#une-librairie">Une librairie</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -246,7 +259,7 @@ window.Quarto = {
 </section>
 <section id="une-librairie" class="level1">
 <h1>Une librairie</h1>
-<p>Afin d’illustrer l’intérêt d’une librairie, voyons le fonctionnement primitif de <code>R</code>.Le langage de programmation <code>R</code> est utilisable avec un ensemble de fonctions que l’on appelle <em>base functions</em>. Ces fonctions de base permettent de réaliser des opérations fondamentales. Outre ces fonctions, il existe une syntaxe basique qui nous permet d’interagir avec des objets statistiques. Prenons l’example d’une base de données nommée automobile <code>mtcars</code>. Elle est consitutée de 32 observations (32 modèles) et de 11 variables. L’objet de base de données pour <code>R</code> est le <code>data.frame</code>.</p>
+<p>Afin d’illustrer l’intérêt d’une librairie, voyons le fonctionnement primitif de <code>R</code>.Le langage de programmation <code>R</code> est utilisable avec un ensemble de fonctions que l’on appelle <em>base functions</em>. Ces fonctions de base permettent de réaliser des opérations fondamentales. Outre ces fonctions, il existe une syntaxe basique qui nous permet d’interagir avec des objets de <code>R</code>. Prenons l’example d’une base de données d’automobiles, nommée <code>mtcars</code>. Elle est consitutée de 32 observations (32 modèles) et de 11 variables. L’objet de base de données pour <code>R</code> est le <code>data.frame</code>.</p>
 <p>En <em>base</em> <code>R</code>, il est possible de sélectionner précisément des rangées et des colonnes d’une base de donnée <code>df</code>. Si l’on souhaite prendre les rangées de <strong>5</strong> à <strong>9</strong> et les colonnes <strong>2</strong>(<code>cyl</code> pour cylindres) et <strong>4</strong> (<code>hp</code> pour <em>horsepower</em>), il est possible de procéder de la façon suivante:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>mtcars[<span class="dv">5</span><span class="sc">:</span><span class="dv">9</span>,<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>)] </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -270,7 +283,47 @@ Valiant             6 105 3.46
 Duster 360          8 245 3.57</code></pre>
 </div>
 </div>
-<p>L’exercice devient laborieux et très rapidement illisible. <code>Tidyverse</code> est une librairie qui permet, entre autre, d’interagir beaucoup plus simplement avec des <code>data.frame</code>.</p>
+<p>L’exercice devient laborieux et très rapidement illisible. <code>Tidyverse</code> est une librairie qui permet, entre autre, d’interagir beaucoup plus simplement avec des <code>data.frame</code>. Utiliser une librairie nécessite deux étapes:</p>
+<ol type="1">
+<li>Installer la librairie</li>
+<li>Charger la librairie</li>
+</ol>
+<p>Il ne faut installer la librairie qu’une seule fois sur sa machine. En revanche, il sera nécessaire de charger une librairie à chaque fois que l’on redémarre <code>R</code>. Dans votre script, rédigez:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>) <span class="co"># Installation de la librairie sur la machine</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'tidyverse'</span>) <span class="co"># Chargement de la librairie dans la session</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Pour exécuter ce code, cliquez sur <code>Run</code> en haut à droite dans le cadran 1. Ceci exécutera l’intégralité du code contenu dans votre script. Si vous souhaitez exécuter partiellement votre code, sélectionnez le morceau de code en question avec votre curseur et composez <code>CTRL + Enter</code>. Votre console devrait afficher:</p>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.2.0     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.2     ✔ tibble    3.3.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+</div>
+<p>Il est désormais possible de recourir aux outils du <code>Tidyverse</code>. Le premier outil que nous allons voir est le <strong><em>pipe</em></strong> <code>%&gt;%</code>. Il permet d’alléger la rédaction de transformation de données ainsi que sa lecture.</p>
+<p>Grâce au pipe, il sera possible de lire et interpréter le fonctionnement d’un code de gauche à droite, en le combinant avec diverses fonctions. Reprenons l’exemple précédent dans lequel nous sélectionnions des modèles selon la condition <span class="math inline">\(wt&gt;3.4\)</span>. En base <code>R</code>, nous rédigions:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>mtcars[<span class="dv">5</span><span class="sc">:</span><span class="dv">9</span>,<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>)][<span class="fu">which</span>(mtcars[<span class="dv">5</span><span class="sc">:</span><span class="dv">9</span>,<span class="st">"wt"</span>]<span class="sc">&gt;</span><span class="fl">3.4</span>),]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Nous procédions à 3 opérations: <em>(i)</em> couper certaines rangées du <code>data.frame</code>, <em>(ii)</em> sélectionner 3 variables et <em>(iii)</em> filtrer conditionnellement les observations. Grâce aux outils du <code>tidyverse</code>, ceci peut être fait de la façon suivante:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span> <span class="fu">slice</span>(<span class="dv">5</span><span class="sc">:</span><span class="dv">9</span>) <span class="sc">%&gt;%</span> <span class="fu">select</span>(cyl,hp,wt) <span class="sc">%&gt;%</span> <span class="fu">filter</span>(wt<span class="sc">&gt;</span><span class="fl">3.4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                  cyl  hp   wt
+Hornet Sportabout   8 175 3.44
+Valiant             6 105 3.46
+Duster 360          8 245 3.57</code></pre>
+</div>
+</div>
+<p>Beaucoup plus lisible !</p>
 
 
 </section>
