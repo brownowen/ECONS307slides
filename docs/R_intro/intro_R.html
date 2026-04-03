@@ -176,12 +176,12 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+    <h2 id="toc-title">Sections</h2>
    
   <ul>
   <li><a href="#un-langage-de-programmation" id="toc-un-langage-de-programmation" class="nav-link active" data-scroll-target="#un-langage-de-programmation">Un langage de programmation</a></li>
   <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio">Rstudio</a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#créer-un-espace-de-travail-sur-rstudio" id="toc-créer-un-espace-de-travail-sur-rstudio" class="nav-link" data-scroll-target="#créer-un-espace-de-travail-sur-rstudio">Créer un espace de travail sur <strong>Rstudio</strong></a></li>
   </ul></li>
   <li><a href="#une-librairie" id="toc-une-librairie" class="nav-link" data-scroll-target="#une-librairie">Une librairie</a></li>
@@ -284,10 +284,12 @@ Duster 360          8 245 3.57</code></pre>
 </div>
 </div>
 <p>L’exercice devient laborieux et très rapidement illisible. <code>Tidyverse</code> est une librairie qui permet, entre autre, d’interagir beaucoup plus simplement avec des <code>data.frame</code>. Utiliser une librairie nécessite deux étapes:</p>
+<blockquote class="blockquote">
 <ol type="1">
 <li>Installer la librairie</li>
 <li>Charger la librairie</li>
 </ol>
+</blockquote>
 <p>Il ne faut installer la librairie qu’une seule fois sur sa machine. En revanche, il sera nécessaire de charger une librairie à chaque fois que l’on redémarre <code>R</code>. Dans votre script, rédigez:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>) <span class="co"># Installation de la librairie sur la machine</span></span>
@@ -324,6 +326,7 @@ Duster 360          8 245 3.57</code></pre>
 </div>
 </div>
 <p>Beaucoup plus lisible !</p>
+<p>#AJOUTER CHEATSHEET DPLYR</p>
 
 
 </section>

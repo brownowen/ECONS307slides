@@ -2,7 +2,9 @@
 title: "Introduction à R"
 format: html
 editor: visual
-toc: true
+toc: TRUE 
+toc-title: Sections
+toc-depth: 4
 ---
 
 ```{r}
@@ -113,8 +115,8 @@ mtcars[5:9,c(2,4,6)][which(mtcars[5:9,"wt"]>3.4),]
 
 L'exercice devient laborieux et très rapidement illisible. `Tidyverse` est une librairie qui permet, entre autre, d'interagir beaucoup plus simplement avec des `data.frame`. Utiliser une librairie nécessite deux étapes:
 
-  1. Installer la librairie
-  2. Charger la librairie
+>  1. Installer la librairie
+>  2. Charger la librairie
   
 Il ne faut installer la librairie qu'une seule fois sur sa machine. En revanche, il sera nécessaire de charger une librairie à chaque fois que l'on redémarre `R`. Dans votre script, rédigez:
 
@@ -144,7 +146,9 @@ Nous procédions à 3 opérations: *(i)* couper certaines rangées du `data.fram
 mtcars %>% slice(5:9) %>% select(cyl,hp,wt) %>% filter(wt>3.4)
 ```
 
-Beaucoup plus lisible !
+Beaucoup plus lisible ! 
+
+#AJOUTER CHEATSHEET DPLYR
 
 
 
