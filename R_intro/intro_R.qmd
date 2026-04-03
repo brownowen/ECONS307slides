@@ -27,15 +27,17 @@ Parmi l'ensemble des langages, `R` présente plusieurs avantages:
 * `R` présente une importante communauté d'utilisateur$\cdot$ices qui contribue à la résolution de problème et à l'évolution du langage. 
 * La littérature économétrique contribue fréquemment à l'intégration de nouvelles méthodes à`R`. Les techniques économétriques de pointes y sont généralement accessibles.
 
-Ces contributions sont faites sous forme de librairies : des fonctions pré-faites qui permettent **(i)** de simplifier l'usage de `R` et **(ii)** de réaliser des tâches complexes.
+Ces contributions sont faites sous forme de librairies : des fonctions pré-faites qui permettent *(i)* de simplifier l'usage de `R` et *(ii)* de réaliser des tâches complexes.
 
 ## Une librairie
 
-Le langage de programmation `R` est utilisable avec un ensemble de fonction que l'on appelle ** base functions**. Ces fonctions de base permettent de réaliser des opérations fondamentales. Lorsque l'on
+Le langage de programmation `R` est utilisable avec un ensemble de fonction que l'on appelle *base functions*. Ces fonctions de base permettent de réaliser des opérations fondamentales. Lorsque l'on
 
-```{r}
+```{r, echo=FALSE}
+#| message: false
+#| warning: false
 data(mtcars)
-
+mtcars[1:10,]
 ```
 
 

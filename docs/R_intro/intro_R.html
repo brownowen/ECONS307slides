@@ -20,41 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -207,13 +172,25 @@ window.Quarto = {
 <li><code>R</code> présente une importante communauté d’utilisateur<span class="math inline">\(\cdot\)</span>ices qui contribue à la résolution de problème et à l’évolution du langage.</li>
 <li>La littérature économétrique contribue fréquemment à l’intégration de nouvelles méthodes à<code>R</code>. Les techniques économétriques de pointes y sont généralement accessibles.</li>
 </ul>
-<p>Ces contributions sont faites sous forme de librairies : des fonctions pré-faites qui permettent <strong>(i)</strong> de simplifier l’usage de <code>R</code> et <strong>(ii)</strong> de réaliser des tâches complexes.</p>
+<p>Ces contributions sont faites sous forme de librairies : des fonctions pré-faites qui permettent <em>(i)</em> de simplifier l’usage de <code>R</code> et <em>(ii)</em> de réaliser des tâches complexes.</p>
 </section>
 <section id="une-librairie" class="level2">
 <h2 class="anchored" data-anchor-id="une-librairie">Une librairie</h2>
-<p>Le langage de programmation <code>R</code> est utilisable avec un ensemble de fonction que l’on appelle ** base functions**. Ces fonctions de base permettent de réaliser des opérations fondamentales. Lorsque l’on</p>
+<p>Le langage de programmation <code>R</code> est utilisable avec un ensemble de fonction que l’on appelle <em>base functions</em>. Ces fonctions de base permettent de réaliser des opérations fondamentales. Lorsque l’on</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                   mpg cyl  disp  hp drat    wt  qsec vs am gear carb
+Mazda RX4         21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
+Mazda RX4 Wag     21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
+Datsun 710        22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1
+Hornet 4 Drive    21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1
+Hornet Sportabout 18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2
+Valiant           18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1
+Duster 360        14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4
+Merc 240D         24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2
+Merc 230          22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2
+Merc 280          19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4</code></pre>
+</div>
 </div>
 
 
