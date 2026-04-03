@@ -249,13 +249,13 @@
     "href": "R_intro/intro_R.html#un-langage-de-programmation",
     "title": "Introduction à R",
     "section": "Un langage de programmation",
-    "text": "Un langage de programmation\nUn langage de programmation est un outil qui nous permet de communiquer avec un ordinateur afin de lui faire exécuter des tâches. Il existe divers langages de programmation conçus selon les objectifs dressés. Dans notre cas, nous souhaitons exécuter des opérations mathématiques et statistiques: nous nous orienterons donc vers un langage de programmation à tel but. Ces langages de programmation permettent donc de traiter des données et de produire des statistiques descriptives, des graphiques, des cartes et bien sûr des régressions.\nParmi l’ensemble des langages, R présente plusieurs avantages:\n\nR est un langage open-soure. Le logiciel est gratuit et quiconque peut disposer du code afin de l’améliorer ou d’en proposer des variantes.\nR présente une importante communauté d’utilisateur\\(\\cdot\\)ices qui contribue à la résolution de problème et à l’évolution du langage.\nLa littérature économétrique contribue fréquemment à l’intégration de nouvelles méthodes àR. Les techniques économétriques de pointes y sont généralement accessibles.\nmange du pain"
+    "text": "Un langage de programmation\nUn langage de programmation est un outil qui nous permet de communiquer avec un ordinateur afin de lui faire exécuter des tâches. Il existe divers langages de programmation conçus selon les objectifs dressés. Dans notre cas, nous souhaitons exécuter des opérations mathématiques et statistiques: nous nous orienterons donc vers un langage de programmation à tel but. Ces langages de programmation permettent donc de traiter des données et de produire des statistiques descriptives, des graphiques, des cartes et bien sûr des régressions.\nParmi l’ensemble des langages, R présente plusieurs avantages:\n\nR est un langage open-soure. Le logiciel est gratuit et quiconque peut disposer du code afin de l’améliorer ou d’en proposer des variantes.\nR présente une importante communauté d’utilisateur\\(\\cdot\\)ices qui contribue à la résolution de problème et à l’évolution du langage.\nLa littérature économétrique contribue fréquemment à l’intégration de nouvelles méthodes àR. Les techniques économétriques de pointes y sont généralement accessibles.\n\nCes contributions sont faites sous forme de librairies : des fonctions pré-faites qui permettent (i) de simplifier l’usage de R et (ii) de réaliser des tâches complexes."
   },
   {
     "objectID": "R_intro/intro_R.html#une-librairie",
     "href": "R_intro/intro_R.html#une-librairie",
     "title": "Introduction à R",
     "section": "Une librairie",
-    "text": "Une librairie"
+    "text": "Une librairie\nLe langage de programmation R est utilisable avec un ensemble de fonction que l’on appelle ** base functions**. Ces fonctions de base permettent de réaliser des opérations fondamentales. Lorsque l’on\n\ndata(mtcars)"
   }
 ]
