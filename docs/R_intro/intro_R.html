@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -162,36 +197,80 @@ window.Quarto = {
 </header>
 
 
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 <p>Dans le cadre du séminaire, les étudiant<span class="math inline">\(\cdot\)</span>es seront amené<span class="math inline">\(\cdot\)</span>es à employer des méthodes économétrique afin d’analyser des données et déterminer si l’on peut observer une discrimination sur un segment de marché. Ceci nécessite de recourir à un langage de programmation statistique, à un environnement de programmation et à des librairies. L’objectif de ce parcours est d’expliquer ce que cela signifie et d’introduire les étudiant<span class="math inline">\(\cdot\)</span>es à leur utilisation.</p>
-<section id="un-langage-de-programmation" class="level2">
-<h2 class="anchored" data-anchor-id="un-langage-de-programmation">Un langage de programmation</h2>
+<section id="un-langage-de-programmation" class="level1">
+<h1>Un langage de programmation</h1>
 <p>Un langage de programmation est un outil qui nous permet de communiquer avec un ordinateur afin de lui faire exécuter des tâches. Il existe divers langages de programmation conçus selon les objectifs dressés. Dans notre cas, nous souhaitons exécuter des opérations mathématiques et statistiques: nous nous orienterons donc vers un langage de programmation à tel but. Ces langages de programmation permettent donc de traiter des données et de produire des statistiques descriptives, des graphiques, des cartes et bien sûr des régressions.</p>
 <p>Parmi l’ensemble des langages, <code>R</code> présente plusieurs avantages:</p>
 <ul>
 <li><code>R</code> est un langage <em>open-soure</em>. Le logiciel est gratuit et quiconque peut disposer du code afin de l’améliorer ou d’en proposer des variantes.</li>
-<li><code>R</code> présente une importante communauté d’utilisateur<span class="math inline">\(\cdot\)</span>ices qui contribue à la résolution de problème et à l’évolution du langage.</li>
-<li>La littérature économétrique contribue fréquemment à l’intégration de nouvelles méthodes à<code>R</code>. Les techniques économétriques de pointes y sont généralement accessibles.</li>
+<li><code>R</code> présente une importante communauté d’utilisateur<span class="math inline">\(\cdot\)</span>ices qui contribuent à la résolution de problème et à l’évolution du langage.</li>
+<li>La littérature économétrique contribue fréquemment à l’intégration de nouvelles méthodes en <code>R</code>. Les techniques économétriques de pointes y sont généralement accessibles.</li>
 </ul>
-<p>Ces contributions sont faites sous forme de librairies : des fonctions pré-faites qui permettent <em>(i)</em> de simplifier l’usage de <code>R</code> et <em>(ii)</em> de réaliser des tâches complexes.</p>
+<p>Ces contributions sont faites sous forme de librairies : des fonctions pré-faites qui permettent <em>(i)</em> de simplifier l’usage de <code>R</code> et <em>(ii)</em> de réaliser des tâches complexes. Avant de discuter l’utilisation des librairies en <code>R</code>, nous allons présenter l’environnement dans lequel nous utiliserons <code>R</code>.</p>
 </section>
-<section id="une-librairie" class="level2">
-<h2 class="anchored" data-anchor-id="une-librairie">Une librairie</h2>
-<p>Le langage de programmation <code>R</code> est utilisable avec un ensemble de fonction que l’on appelle <em>base functions</em>. Ces fonctions de base permettent de réaliser des opérations fondamentales. Lorsque l’on</p>
+<section id="rstudio" class="level1">
+<h1>Rstudio</h1>
+<p>L’environnement de développement le plus populaire pour <code>R</code> est <strong>Rstudio</strong>. Tout comme son langage, <strong>Rstudio</strong> est un logiciel libre et gratuit. Tel que représenté ci-dessous, <strong>Rstudio</strong> affiche 4 cadrans.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="..\images/Rstudio_screenshot.png" class="img-fluid figure-img"></p>
+<figcaption>Environnement de programmation Rstudio</figcaption>
+</figure>
+</div>
+<ol type="1">
+<li><p>Le cadran 1 est l’espace du script. C’est là que l’on rédige son code.</p></li>
+<li><p>Le cadran 2 est l’espace des données. C’est là que sont listés tous les <code>data.frame</code>, ou d’autres “objets” tels que des listes, des vecteurs de données, ou des résultats de régressions.</p></li>
+<li><p>Le cadran 3 est constitué de plusieurs panneaux, les principaux étant:</p>
+<ul>
+<li><em>Files</em> permet de naviguer dans son explorateur de fichiers. C’est un accès direct vers nos données et nos scripts.</li>
+<li><em>Plots</em> est l’espace dans lequel sont affichés les graphiques.</li>
+<li><em>Packages</em> est l’espace listant toutes les librairies installées.</li>
+<li><em>Help</em> qui permet de naviguer dans la documentation des librairies. La documentation est un ensemble concernant un logiciel, destiné à sa conception, son utilisation ou sa maintenance.</li>
+</ul></li>
+<li><p>Le cadran 4 est l’espace de console. C’est là qu’est interprété le code et que <code>R</code> affiche les résultats de ses calculs.</p></li>
+</ol>
+<section id="créer-un-espace-de-travail-sur-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="créer-un-espace-de-travail-sur-rstudio">Créer un espace de travail sur <strong>Rstudio</strong></h2>
+<p>Lorsqu’un projet est entamé, il est de bon usage de créer un <em>projet</em> <code>R</code>. Un projet est un espace dans l’ordinateur où se trouve tout le matériel relatif à un projet. Lorsqu’un projet est construit, il est possible sauvegarder son avancée, de fermer <strong>Rstudio</strong> et de reprendre ultérieurement son travail où il a été laissé. À la réouverture d’un projet, l’environnement de travail affiche automatiquement les scripts, les <code>data.frame</code> et le dossier dans lequel se trouve la matériel au sein du disque dur de l’ordinateur.</p>
+<ol type="1">
+<li><strong>Créer un projet</strong>: en haut à gauche, sélectionnez <code>File &gt; New project</code> en veillant à choisir pertinemment le nom et l’emplacement dans votre ordinateur (pas dans un fichier appartenant à un cloud par exemple). Lorsque le dossier du projet <strong>Rstudio</strong> est créé, vous pouvez ajouter votre base de données dans ce dossier.<br>
+</li>
+<li><strong>Créer un script</strong>: en haut à gauche, sélectionnez <code>File &gt; New file &gt; R script</code>.</li>
+</ol>
+<p>Désormais, vous disposez d’un espace de travail dans lequel vous pourrez analyser vos données. Pour ce faire, vous emploierez une diversité d’outils. Néanmoins, tous les outils ne sont pas disponibles par défaut sur <code>R</code>: vous devrez installer des “boîtes à outils” que sont les <em>librairies</em>. La prochaine section discute l’usage des librairies, après quoi nous passerons à l’analyse de données.</p>
+</section>
+</section>
+<section id="une-librairie" class="level1">
+<h1>Une librairie</h1>
+<p>Afin d’illustrer l’intérêt d’une librairie, voyons le fonctionnement primitif de <code>R</code>.Le langage de programmation <code>R</code> est utilisable avec un ensemble de fonctions que l’on appelle <em>base functions</em>. Ces fonctions de base permettent de réaliser des opérations fondamentales. Outre ces fonctions, il existe une syntaxe basique qui nous permet d’interagir avec des objets statistiques. Prenons l’example d’une base de données nommée automobile <code>mtcars</code>. Elle est consitutée de 32 observations (32 modèles) et de 11 variables. L’objet de base de données pour <code>R</code> est le <code>data.frame</code>.</p>
+<p>En <em>base</em> <code>R</code>, il est possible de sélectionner précisément des rangées et des colonnes d’une base de donnée <code>df</code>. Si l’on souhaite prendre les rangées de <strong>5</strong> à <strong>9</strong> et les colonnes <strong>2</strong>(<code>cyl</code> pour cylindres) et <strong>4</strong> (<code>hp</code> pour <em>horsepower</em>), il est possible de procéder de la façon suivante:</p>
 <div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>mtcars[<span class="dv">5</span><span class="sc">:</span><span class="dv">9</span>,<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>)] </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>                   mpg cyl  disp  hp drat    wt  qsec vs am gear carb
-Mazda RX4         21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4
-Mazda RX4 Wag     21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4
-Datsun 710        22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1
-Hornet 4 Drive    21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1
-Hornet Sportabout 18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2
-Valiant           18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1
-Duster 360        14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4
-Merc 240D         24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2
-Merc 230          22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2
-Merc 280          19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4</code></pre>
+<pre><code>                  cyl  hp
+Hornet Sportabout   8 175
+Valiant             6 105
+Duster 360          8 245
+Merc 240D           4  62
+Merc 230            4  95</code></pre>
 </div>
 </div>
+<p>Où les crochets juxtaposés à un objet <code>data.frame</code> indiquent à R que l’on fixe les [rangées,colonnes] que l’on souhaite.L’objet rendu est à nouveau un <code>data.frame</code> avec lequel il sera à nouveau possible d’interagir avec des crochets.</p>
+<p>Imaginons que l’on souhaite ajouter un degré de complexité et, par exemple, ne conserver que les observations pour lesquelles le poids <code>wt</code> (colonne <strong>6</strong>) est supérieur à <span class="math inline">\(3.4\)</span>. En <em>base</em> <code>R</code>, nous allons ajouter une deuxième couche de filtre en réemployant des crochets:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>mtcars[<span class="dv">5</span><span class="sc">:</span><span class="dv">9</span>,<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>)][<span class="fu">which</span>(mtcars[<span class="dv">5</span><span class="sc">:</span><span class="dv">9</span>,<span class="st">"wt"</span>]<span class="sc">&gt;</span><span class="fl">3.4</span>),]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                  cyl  hp   wt
+Hornet Sportabout   8 175 3.44
+Valiant             6 105 3.46
+Duster 360          8 245 3.57</code></pre>
+</div>
+</div>
+<p>L’exercice devient laborieux et très rapidement illisible. <code>Tidyverse</code> est une librairie qui permet, entre autre, d’interagir beaucoup plus simplement avec des <code>data.frame</code>.</p>
 
 
 </section>
