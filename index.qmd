@@ -5,5 +5,5 @@ format: html
 
 La plateforme présente a pour objectif d'accompagner les étudiant$\cdot$es dans la réalisation du travail de ce séminaire.
 
-- [Séance d'introduction](slides/index.html): durant cette séance, nous discutons de l'a
-- [Intro à R](R_intro/intro_R.qmd)
+- [Séance d'introduction](slides/index.html): durant cette séance, [description de séance]
+- [Intro à R](R_intro/intro_R.html)

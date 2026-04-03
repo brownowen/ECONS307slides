@@ -6,7 +6,7 @@ website:
   title: "ECONS-307"
   navbar:
     left:
-      - href: index.qmd
-        text: Home
       - href: slides/index.html
         text: Séance d'introduction
+      - href: R_intro/intro_R.html
+        text: Introduction à R
