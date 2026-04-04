@@ -8,7 +8,7 @@ toc-depth: 4
 tabsets: true
 ---
 
-```{r,echo=FALSE}
+```{r,echo=FALSE,message=FALSE,warning=FALSE}
 phonesdf <- readRDS("../material/phonesdf.RDS")
 data(mtcars)
 library("tidymodels")
@@ -78,7 +78,7 @@ Lorsqu'un projet est entamé, il est de bon usage de créer un *projet* `R`. Un 
   
 Désormais, vous disposez d'un espace de travail dans lequel vous pourrez analyser vos données. Pour ce faire, vous emploierez une diversité d'outils. Néanmoins, tous les outils ne sont pas disponibles par défaut sur `R`: vous devrez installer des "boîtes à outils" que sont les *librairies*. La prochaine section discute l'usage des librairies, après quoi nous passerons à l'analyse de données.
   
-
+Afin de vous entraîner, il est suggéré de lancer *Rstudio* et d'exécuter les codes `R` sur votre machine en même temps que vous parcourez ce tutoriel, afin de vous familiariser avec le langage.
 
 # Une librairie
 
@@ -286,7 +286,7 @@ un tableau mis en forme avec les coefficients, intervalles de confiance et
 p-valeurs.
 ```{r}
 # On suppose que le modèle a déjà été estimé :
-# preg <- lm(y ~ x1 + x2, data = mes_données)
+# mmodele <- lm(y ~ x1 + x2, data = mes_données)
 
 tbl <- tbl_regression(modele, intercept = TRUE)
 tbl
@@ -308,8 +308,12 @@ Le fichier `reg_table.docx` apparaît dans le dossier de votre projet et peut
 être directement intégré à un rapport.
 
 
+---
+
 
 # Visualisation avec `ggplot2`
+
+`ggplot2` est une librairie de visualisation basée sur la grammaire des graphiques, qui consiste à construire un graphique couche par couche en ajoutant des éléments superposés. Sa flexibilité et la lisibilité de son code en font la librairie de visualisation la plus utilisée dans l'écosystème `R`.
 
 `ggplot2` repose sur une **grammaire des graphiques** : on empile des couches
 (*layers*) avec `+`.
@@ -383,6 +387,9 @@ mtcars %>%
   theme(legend.position = "none")
 ```
 
+
+### Représentation des résultats d'une régression
+
 Enfin, nous pouvons représenter les résultats de notre régression hédonique sur les prix de smartphones avec `ggplot`.
 ```{r}
 library("tidymodels") #libraire utile pour transformer nos tables de régressions en data.frame
@@ -404,7 +411,7 @@ tidy(modele)%>%
   theme_minimal(base_size = 13)
 ```
 
-
+**Rstudio** produira dans le cadran 3 un graphique. Il et possible d'exporter cette image sous fichier `.png` et de l'enregistrer afin de l'inclure dans un document de traitement de texte.
 
 
 
