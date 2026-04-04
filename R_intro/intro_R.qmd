@@ -205,7 +205,7 @@ mtcars %>%
 
 ---
 
-## Régression linéaire avec `lm()`
+# Régression linéaire avec `lm()`
 
 ### Rappel théorique
 
@@ -223,7 +223,7 @@ et obtenir
 $$\hat{y} = \hat{\beta}_0 + \hat{\beta}_1 x_1 + \hat{\beta}_2 x_2 + \cdots + \hat{\beta}_k x_k $$
 
 
-##Ajuster un modèle avec `lm()`
+## Ajuster un modèle avec `lm()`
 
 Il existe une fonction en `R` qui permet de calculer ces coefficients, la fonction `lm()` (pour *linear model*). Appliquons cette fonction à la base de données de téléphones discutées en séance d'introduction. Celle-ci était constituée de 28 observations et des variables suivantes :
 ```{r,echo=FALSE}
@@ -259,16 +259,11 @@ coef(modele)
 confint(modele)
 ```
 
-## Valeurs prédites
-```{r}
-fitted(modele)
-```
-
 :::
 
 ---
 
-## Exporter ses résultats de régression avec `gtsummary`
+# Exporter ses résultats de régression avec `gtsummary`
 
 Présenter les résultats d'une régression dans un rapport nécessite un tableau
 lisible et formaté. La librairie `gtsummary` permet de produire
@@ -314,7 +309,7 @@ Le fichier `reg_table.docx` apparaît dans le dossier de votre projet et peut
 
 
 
-## Visualisation avec `ggplot2`
+# Visualisation avec `ggplot2`
 
 `ggplot2` repose sur une **grammaire des graphiques** : on empile des couches
 (*layers*) avec `+`.
