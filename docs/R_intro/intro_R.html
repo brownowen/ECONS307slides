@@ -249,7 +249,7 @@ window.Quarto = {
 <p>Un langage de programmation est un outil qui nous permet de communiquer avec un ordinateur afin de lui faire exécuter des tâches. Il existe divers langages de programmation conçus selon les objectifs dressés. Dans notre cas, nous souhaitons exécuter des opérations mathématiques et statistiques: nous nous orienterons donc vers un langage de programmation à tel but. Ces langages de programmation permettent donc de traiter des données et de produire des statistiques descriptives, des graphiques, des cartes et bien sûr des régressions.</p>
 <p>Parmi l’ensemble des langages, <code>R</code> présente plusieurs avantages:</p>
 <ul>
-<li><code>R</code> est un langage <em>open-soure</em>. Le logiciel est gratuit et quiconque peut disposer du code afin de l’améliorer ou d’en proposer des variantes.</li>
+<li><code>R</code> est un langage <em>open-source</em>. Le logiciel est gratuit et quiconque peut disposer du code afin de l’améliorer ou d’en proposer des variantes.</li>
 <li><code>R</code> présente une importante communauté d’utilisateur<span class="math inline">\(\cdot\)</span>ices qui contribuent à la résolution de problème et à l’évolution du langage.</li>
 <li>La littérature économétrique contribue fréquemment à l’intégration de nouvelles méthodes en <code>R</code>. Les techniques économétriques de pointes y sont généralement accessibles.</li>
 </ul>
@@ -278,19 +278,19 @@ window.Quarto = {
 </ol>
 <section id="créer-un-espace-de-travail-sur-rstudio" class="level2">
 <h2 class="anchored" data-anchor-id="créer-un-espace-de-travail-sur-rstudio">Créer un espace de travail sur <strong>Rstudio</strong></h2>
-<p>Lorsqu’un projet est entamé, il est de bon usage de créer un <em>projet</em> <code>R</code>. Un projet est un espace dans l’ordinateur où se trouve tout le matériel relatif à un projet. Lorsqu’un projet est construit, il est possible sauvegarder son avancée, de fermer <strong>Rstudio</strong> et de reprendre ultérieurement son travail où il a été laissé. À la réouverture d’un projet, l’environnement de travail affiche automatiquement les scripts, les <code>data.frame</code> et le dossier dans lequel se trouve la matériel au sein du disque dur de l’ordinateur.</p>
+<p>Lorsqu’un projet est entamé, il est de bon usage de créer un <em>projet</em> <code>R</code>. Un projet est un espace dans l’ordinateur où se trouve tout le matériel relatif à un projet. Lorsqu’un projet est construit, il est possible sauvegarder son avancée, de fermer <strong>Rstudio</strong> et de reprendre ultérieurement son travail où il a été laissé. À la réouverture d’un projet, l’environnement de travail affiche automatiquement les scripts, les <code>data.frame</code> et le dossier dans lequel se trouve le matériel au sein du disque dur de l’ordinateur.</p>
 <ol type="1">
 <li><strong>Créer un projet</strong>: en haut à gauche, sélectionnez <code>File &gt; New project</code> en veillant à choisir pertinemment le nom et l’emplacement dans votre ordinateur (pas dans un fichier appartenant à un cloud par exemple). Lorsque le dossier du projet <strong>Rstudio</strong> est créé, vous pouvez ajouter votre base de données dans ce dossier.<br>
 </li>
 <li><strong>Créer un script</strong>: en haut à gauche, sélectionnez <code>File &gt; New file &gt; R script</code>.</li>
 </ol>
-<p>Désormais, vous disposez d’un espace de travail dans lequel vous pourrez analyser vos données. Pour ce faire, vous emploierez une diversité d’outils. Néanmoins, tous les outils ne sont pas disponibles par défaut sur <code>R</code>: vous devrez installer des “boîtes à outils” que sont les <em>librairies</em>. La prochaine section discute l’usage des librairies, après quoi nous passerons à l’analyse de données.</p>
+<p>Désormais, vous disposez d’un espace de travail dans lequel vous pourrez analyser vos données. Pour ce faire, vous emploierez une diversité d’outils. Néanmoins, tous les outils ne sont pas disponibles par défaut sur <code>R</code>: vous devrez installer des “boîtes à outils” que sont les <em>librairies</em>. La prochaine section discute l’usage des librairies, après quoi nous passerons à l’analyse de données et la visualisation de données.</p>
 <p>Afin de vous entraîner, il est suggéré de lancer <em>Rstudio</em> et d’exécuter les codes <code>R</code> sur votre machine en même temps que vous parcourez ce tutoriel, afin de vous familiariser avec le langage.</p>
 </section>
 </section>
 <section id="une-librairie" class="level1">
 <h1>Une librairie</h1>
-<p>Afin d’illustrer l’intérêt d’une librairie, voyons le fonctionnement primitif de <code>R</code>.Le langage de programmation <code>R</code> est utilisable avec un ensemble de fonctions que l’on appelle <em>base functions</em>. Ces fonctions de base permettent de réaliser des opérations fondamentales. Outre ces fonctions, il existe une syntaxe basique qui nous permet d’interagir avec des objets de <code>R</code>. Prenons l’example d’une base de données d’automobiles, nommée <code>mtcars</code>. Elle est consitutée de 32 observations (32 modèles) et de 11 variables. L’objet de base de données pour <code>R</code> est le <code>data.frame</code>.</p>
+<p>Afin d’illustrer l’intérêt d’une librairie, voyons le fonctionnement primitif de <code>R</code>.Le langage de programmation <code>R</code> est utilisable avec un ensemble de fonctions que l’on appelle <em>base functions</em>. Ces fonctions de base permettent de réaliser des opérations fondamentales. Outre ces fonctions, il existe une syntaxe basique qui nous permet d’interagir avec des objets de <code>R</code>. Prenons l’example d’une base de données d’automobiles, nommée <code>mtcars</code>. Elle est constiutée de 32 observations (32 modèles) et de 11 variables. L’objet de base de données pour <code>R</code> est le <code>data.frame</code>.</p>
 <p>En <em>base</em> <code>R</code>, il est possible de sélectionner précisément des rangées et des colonnes d’une base de donnée <code>df</code>. Si l’on souhaite prendre les rangées de <strong>5</strong> à <strong>9</strong> et les colonnes <strong>2</strong>(<code>cyl</code> pour cylindres) et <strong>4</strong> (<code>hp</code> pour <em>horsepower</em>), il est possible de procéder de la façon suivante:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>mtcars[<span class="dv">5</span><span class="sc">:</span><span class="dv">9</span>,<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>)] </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -316,17 +316,14 @@ Duster 360          8 245 3.57</code></pre>
 </div>
 <p>L’exercice devient laborieux et très rapidement illisible. <code>Tidyverse</code> est une librairie qui permet, entre autre, d’interagir beaucoup plus simplement avec des <code>data.frame</code>. Utiliser une librairie nécessite deux étapes:</p>
 <blockquote class="blockquote">
-<ol type="1">
-<li>Installer la librairie</li>
-<li>Charger la librairie</li>
-</ol>
+<p><strong>1. Installer la librairie</strong> <strong>2. Charger la librairie</strong></p>
 </blockquote>
 <p>Il ne faut installer la librairie qu’une seule fois sur sa machine. En revanche, il sera nécessaire de charger une librairie à chaque fois que l’on redémarre <code>R</code>. Dans votre script, rédigez:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>) <span class="co"># Installation de la librairie sur la machine</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'tidyverse'</span>) <span class="co"># Chargement de la librairie dans la session</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>Pour exécuter ce code, cliquez sur <code>Run</code> en haut à droite dans le cadran 1. Ceci exécutera l’intégralité du code contenu dans votre script. Si vous souhaitez exécuter partiellement votre code, sélectionnez le morceau de code en question avec votre curseur et composez <code>CTRL + Enter</code>. Votre console devrait afficher:</p>
+<p>Pour exécuter ce code, cliquez sur <code>Run</code> en haut à droite du cadran 1. Ceci exécutera l’intégralité du code contenu dans votre script. Si vous souhaitez exécuter partiellement votre code, sélectionnez le morceau de code en question avec votre curseur et composez <code>CTRL + Enter</code>. Votre console devrait afficher:</p>
 <div class="cell">
 <div class="cell-output cell-output-stderr">
 <pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
@@ -344,7 +341,7 @@ Duster 360          8 245 3.57</code></pre>
 </div>
 </div>
 <p>Il est désormais possible de recourir aux outils du <code>Tidyverse</code>. Le premier outil que nous allons voir est le <strong><em>pipe</em></strong> <code>%&gt;%</code>. Il permet d’alléger la rédaction de transformation de données ainsi que sa lecture. Formellement, les <code>%&gt;%</code> transforment <code>x %&gt;% f(y)</code> en <code>f(x,y)</code>.</p>
-<p>Grâce au pipe, il sera possible de lire et interpréter le fonctionnement d’un code de gauche à droite, en le combinant avec diverses fonctions. Reprenons l’exemple précédent dans lequel nous sélectionnions des modèles selon la condition <span class="math inline">\(wt&gt;3.4\)</span>. En base <code>R</code>, nous rédigions:</p>
+<p>Grâce au <em>pipe</em>, il sera possible de lire et interpréter le fonctionnement d’un code de gauche à droite, en le combinant à diverses fonctions. Reprenons l’exemple précédent dans lequel nous sélectionnions des modèles selon la condition <span class="math inline">\(wt&gt;3.4\)</span>. En base <code>R</code>, nous rédigions:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>mtcars[<span class="dv">5</span><span class="sc">:</span><span class="dv">9</span>,<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>)][<span class="fu">which</span>(mtcars[<span class="dv">5</span><span class="sc">:</span><span class="dv">9</span>,<span class="st">"wt"</span>]<span class="sc">&gt;</span><span class="fl">3.4</span>),]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -480,7 +477,7 @@ Hornet Sportabout 3.440 1560.384</code></pre>
 </section>
 <section id="ajuster-un-modèle-avec-lm" class="level2">
 <h2 class="anchored" data-anchor-id="ajuster-un-modèle-avec-lm">Ajuster un modèle avec <code>lm()</code></h2>
-<p>Il existe une fonction en <code>R</code> qui permet de calculer ces coefficients, la fonction <code>lm()</code> (pour <em>linear model</em>). Appliquons cette fonction à la base de données de téléphones discutées en séance d’introduction. Celle-ci était constituée de 28 observations et des variables suivantes :</p>
+<p>Il existe une fonction en <code>R</code> qui permet de calculer ces coefficients, la fonction <code>lm()</code> (pour <em>linear model</em>). Appliquons cette fonction à la base de données de téléphones discutée en séance d’introduction. Celle-ci était constituée de 28 observations et des variables suivantes :</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "Produit"              "price"                "Qualité de la caméra"
@@ -495,7 +492,7 @@ Hornet Sportabout 3.440 1560.384</code></pre>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>modele <span class="ot">&lt;-</span> <span class="fu">lm</span>(price<span class="sc">~</span> Poids <span class="sc">+</span> megapixels <span class="sc">+</span> <span class="fu">factor</span>(age) <span class="sc">+</span> RAM <span class="sc">+</span> </span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>         stockage <span class="sc">+</span> (<span class="st">`</span><span class="at">Qualité de la caméra</span><span class="st">`</span>)<span class="sc">+</span>(Marque),</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">data =</span> phonesdf)</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modele)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modele) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -608,23 +605,23 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
 <span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>tbl <span class="ot">&lt;-</span> <span class="fu">tbl_regression</span>(modele, <span class="at">intercept =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>tbl</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="fnuxntgtnh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#fnuxntgtnh table {
+<div id="iyugnpwjjf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#iyugnpwjjf table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#fnuxntgtnh thead, #fnuxntgtnh tbody, #fnuxntgtnh tfoot, #fnuxntgtnh tr, #fnuxntgtnh td, #fnuxntgtnh th {
+#iyugnpwjjf thead, #iyugnpwjjf tbody, #iyugnpwjjf tfoot, #iyugnpwjjf tr, #iyugnpwjjf td, #iyugnpwjjf th {
   border-style: none;
 }
 
-#fnuxntgtnh p {
+#iyugnpwjjf p {
   margin: 0;
   padding: 0;
 }
 
-#fnuxntgtnh .gt_table {
+#iyugnpwjjf .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -650,12 +647,12 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#fnuxntgtnh .gt_caption {
+#iyugnpwjjf .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#fnuxntgtnh .gt_title {
+#iyugnpwjjf .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -667,7 +664,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   border-bottom-width: 0;
 }
 
-#fnuxntgtnh .gt_subtitle {
+#iyugnpwjjf .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -679,7 +676,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   border-top-width: 0;
 }
 
-#fnuxntgtnh .gt_heading {
+#iyugnpwjjf .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -691,13 +688,13 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#fnuxntgtnh .gt_bottom_border {
+#iyugnpwjjf .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#fnuxntgtnh .gt_col_headings {
+#iyugnpwjjf .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -712,7 +709,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#fnuxntgtnh .gt_col_heading {
+#iyugnpwjjf .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -732,7 +729,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   overflow-x: hidden;
 }
 
-#fnuxntgtnh .gt_column_spanner_outer {
+#iyugnpwjjf .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -744,15 +741,15 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   padding-right: 4px;
 }
 
-#fnuxntgtnh .gt_column_spanner_outer:first-child {
+#iyugnpwjjf .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#fnuxntgtnh .gt_column_spanner_outer:last-child {
+#iyugnpwjjf .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#fnuxntgtnh .gt_column_spanner {
+#iyugnpwjjf .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -764,11 +761,11 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   width: 100%;
 }
 
-#fnuxntgtnh .gt_spanner_row {
+#iyugnpwjjf .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#fnuxntgtnh .gt_group_heading {
+#iyugnpwjjf .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -794,7 +791,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   text-align: left;
 }
 
-#fnuxntgtnh .gt_empty_group_heading {
+#iyugnpwjjf .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -809,15 +806,15 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   vertical-align: middle;
 }
 
-#fnuxntgtnh .gt_from_md > :first-child {
+#iyugnpwjjf .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#fnuxntgtnh .gt_from_md > :last-child {
+#iyugnpwjjf .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#fnuxntgtnh .gt_row {
+#iyugnpwjjf .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -836,7 +833,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   overflow-x: hidden;
 }
 
-#fnuxntgtnh .gt_stub {
+#iyugnpwjjf .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -849,7 +846,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   padding-right: 5px;
 }
 
-#fnuxntgtnh .gt_stub_row_group {
+#iyugnpwjjf .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -863,15 +860,15 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   vertical-align: top;
 }
 
-#fnuxntgtnh .gt_row_group_first td {
+#iyugnpwjjf .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#fnuxntgtnh .gt_row_group_first th {
+#iyugnpwjjf .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#fnuxntgtnh .gt_summary_row {
+#iyugnpwjjf .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -881,16 +878,16 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   padding-right: 5px;
 }
 
-#fnuxntgtnh .gt_first_summary_row {
+#iyugnpwjjf .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#fnuxntgtnh .gt_first_summary_row.thick {
+#iyugnpwjjf .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#fnuxntgtnh .gt_last_summary_row {
+#iyugnpwjjf .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -900,7 +897,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#fnuxntgtnh .gt_grand_summary_row {
+#iyugnpwjjf .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -910,7 +907,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   padding-right: 5px;
 }
 
-#fnuxntgtnh .gt_first_grand_summary_row {
+#iyugnpwjjf .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -920,7 +917,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#fnuxntgtnh .gt_last_grand_summary_row_top {
+#iyugnpwjjf .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -930,11 +927,11 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#fnuxntgtnh .gt_striped {
+#iyugnpwjjf .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#fnuxntgtnh .gt_table_body {
+#iyugnpwjjf .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -943,7 +940,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#fnuxntgtnh .gt_footnotes {
+#iyugnpwjjf .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -957,7 +954,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#fnuxntgtnh .gt_footnote {
+#iyugnpwjjf .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -966,7 +963,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   padding-right: 5px;
 }
 
-#fnuxntgtnh .gt_sourcenotes {
+#iyugnpwjjf .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -980,7 +977,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#fnuxntgtnh .gt_sourcenote {
+#iyugnpwjjf .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -988,72 +985,72 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   padding-right: 5px;
 }
 
-#fnuxntgtnh .gt_left {
+#iyugnpwjjf .gt_left {
   text-align: left;
 }
 
-#fnuxntgtnh .gt_center {
+#iyugnpwjjf .gt_center {
   text-align: center;
 }
 
-#fnuxntgtnh .gt_right {
+#iyugnpwjjf .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#fnuxntgtnh .gt_font_normal {
+#iyugnpwjjf .gt_font_normal {
   font-weight: normal;
 }
 
-#fnuxntgtnh .gt_font_bold {
+#iyugnpwjjf .gt_font_bold {
   font-weight: bold;
 }
 
-#fnuxntgtnh .gt_font_italic {
+#iyugnpwjjf .gt_font_italic {
   font-style: italic;
 }
 
-#fnuxntgtnh .gt_super {
+#iyugnpwjjf .gt_super {
   font-size: 65%;
 }
 
-#fnuxntgtnh .gt_footnote_marks {
+#iyugnpwjjf .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#fnuxntgtnh .gt_asterisk {
+#iyugnpwjjf .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#fnuxntgtnh .gt_indent_1 {
+#iyugnpwjjf .gt_indent_1 {
   text-indent: 5px;
 }
 
-#fnuxntgtnh .gt_indent_2 {
+#iyugnpwjjf .gt_indent_2 {
   text-indent: 10px;
 }
 
-#fnuxntgtnh .gt_indent_3 {
+#iyugnpwjjf .gt_indent_3 {
   text-indent: 15px;
 }
 
-#fnuxntgtnh .gt_indent_4 {
+#iyugnpwjjf .gt_indent_4 {
   text-indent: 20px;
 }
 
-#fnuxntgtnh .gt_indent_5 {
+#iyugnpwjjf .gt_indent_5 {
   text-indent: 25px;
 }
 
-#fnuxntgtnh .katex-display {
+#iyugnpwjjf .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#fnuxntgtnh div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#iyugnpwjjf div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1325,23 +1322,25 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
 <h3 class="anchored" data-anchor-id="représentation-des-résultats-dune-régression">Représentation des résultats d’une régression</h3>
 <p>Enfin, nous pouvons représenter les résultats de notre régression hédonique sur les prix de smartphones avec <code>ggplot</code>.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"tidymodels"</span>) <span class="co">#libraire utile pour transformer nos tables de régressions en data.frame</span></span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(modele)<span class="sc">%&gt;%</span></span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="co"># tidy transforme l'objet modele qui est un format lm en data.frame, interprétable par ggplot.</span></span>
-<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">term =</span> <span class="fu">reorder</span>(term, estimate),</span>
-<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">conf.low  =</span> estimate <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> std.error,</span>
-<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">conf.high =</span> estimate <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> std.error) <span class="sc">%&gt;%</span></span>
-<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> estimate, <span class="at">y =</span> term)) <span class="sc">+</span></span>
-<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"grey50"</span>) <span class="sc">+</span></span>
-<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbarh</span>(<span class="fu">aes</span>(<span class="at">xmin =</span> conf.low, <span class="at">xmax =</span> conf.high),</span>
-<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">height =</span> <span class="fl">0.2</span>,</span>
-<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"grey40"</span>) <span class="sc">+</span></span>
-<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">color =</span> <span class="st">"#0072B2"</span>) <span class="sc">+</span></span>
-<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Coefficient estimate"</span>,</span>
-<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="cn">NULL</span>,</span>
-<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Coefficient plot with 95% confidence intervals"</span>) <span class="sc">+</span></span>
-<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">13</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"tidymodels"</span>) </span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="co"># tidy models est une libraire utile pour transformer nos tables de régressions en data.frame</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ggplot a besoin comme élément d'entrée de data.frame pour produire des graphiques</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(modele)<span class="sc">%&gt;%</span></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a><span class="co"># tidy transforme l'objet modele qui est un format lm en data.frame, interprétable par ggplot.</span></span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">term =</span> <span class="fu">reorder</span>(term, estimate),</span>
+<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">conf.low  =</span> estimate <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> std.error,</span>
+<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">conf.high =</span> estimate <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> std.error) <span class="sc">%&gt;%</span></span>
+<span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> estimate, <span class="at">y =</span> term)) <span class="sc">+</span></span>
+<span id="cb40-11"><a href="#cb40-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"grey50"</span>) <span class="sc">+</span></span>
+<span id="cb40-12"><a href="#cb40-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbarh</span>(<span class="fu">aes</span>(<span class="at">xmin =</span> conf.low, <span class="at">xmax =</span> conf.high),</span>
+<span id="cb40-13"><a href="#cb40-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">height =</span> <span class="fl">0.2</span>,</span>
+<span id="cb40-14"><a href="#cb40-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"grey40"</span>) <span class="sc">+</span></span>
+<span id="cb40-15"><a href="#cb40-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">color =</span> <span class="st">"#0072B2"</span>) <span class="sc">+</span></span>
+<span id="cb40-16"><a href="#cb40-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Coefficient estimate"</span>,</span>
+<span id="cb40-17"><a href="#cb40-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="cn">NULL</span>,</span>
+<span id="cb40-18"><a href="#cb40-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Coefficient plot with 95% confidence intervals"</span>) <span class="sc">+</span></span>
+<span id="cb40-19"><a href="#cb40-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">13</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1350,7 +1349,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
 </div>
 </div>
 </div>
-<p><strong>Rstudio</strong> produira dans le cadran 3 un graphique. Il et possible d’exporter cette image sous fichier <code>.png</code> et de l’enregistrer afin de l’inclure dans un document de traitement de texte.</p>
+<p><strong>Rstudio</strong> produira dans le cadran 3 un graphique. Il est possible d’exporter cette image sous fichier <code>.png</code> et de l’enregistrer afin de l’inclure dans un document de traitement de texte.</p>
 
 
 </section>
