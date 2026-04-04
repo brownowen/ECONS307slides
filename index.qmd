@@ -1,6 +1,9 @@
 ---
 title: "Séminaire d'économie appliquée - Partie Prix"
 format: html
+author: Owen Brown, Université Libre de Bruxelles 
+author-meta: Owen BROWN (ULB)
+
 ---
 
 La plateforme présente a pour objectif d'accompagner les étudiant$\cdot$es dans la réalisation du travail de ce séminaire.

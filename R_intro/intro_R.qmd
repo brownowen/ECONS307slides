@@ -6,6 +6,8 @@ toc: TRUE
 toc-title: Sections
 toc-depth: 4
 tabsets: true
+author: Owen Brown, Université Libre de Bruxelles 
+author-meta: Owen BROWN (ULB)
 ---
 
 ```{r,echo=FALSE,message=FALSE,warning=FALSE}
