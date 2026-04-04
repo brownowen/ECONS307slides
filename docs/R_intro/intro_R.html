@@ -492,11 +492,10 @@ Hornet Sportabout 3.440 1560.384</code></pre>
 </div>
 <p>La syntaxe de base est <code>lm(y ~ x1 + x2, data = ...)</code>.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Modèle : consommation (mpg) ~ poids (wt) + puissance (hp)</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>modele <span class="ot">&lt;-</span> <span class="fu">lm</span>(price<span class="sc">~</span> Poids <span class="sc">+</span> megapixels <span class="sc">+</span> <span class="fu">factor</span>(age) <span class="sc">+</span> RAM <span class="sc">+</span> </span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>         stockage <span class="sc">+</span> (<span class="st">`</span><span class="at">Qualité de la caméra</span><span class="st">`</span>)<span class="sc">+</span>(Marque),</span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">data =</span> phonesdf)</span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modele)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>modele <span class="ot">&lt;-</span> <span class="fu">lm</span>(price<span class="sc">~</span> Poids <span class="sc">+</span> megapixels <span class="sc">+</span> <span class="fu">factor</span>(age) <span class="sc">+</span> RAM <span class="sc">+</span> </span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>         stockage <span class="sc">+</span> (<span class="st">`</span><span class="at">Qualité de la caméra</span><span class="st">`</span>)<span class="sc">+</span>(Marque),</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">data =</span> phonesdf)</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modele)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -609,23 +608,23 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
 <span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>tbl <span class="ot">&lt;-</span> <span class="fu">tbl_regression</span>(modele, <span class="at">intercept =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>tbl</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="nvwnrqrepl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#nvwnrqrepl table {
+<div id="fnuxntgtnh" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#fnuxntgtnh table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#nvwnrqrepl thead, #nvwnrqrepl tbody, #nvwnrqrepl tfoot, #nvwnrqrepl tr, #nvwnrqrepl td, #nvwnrqrepl th {
+#fnuxntgtnh thead, #fnuxntgtnh tbody, #fnuxntgtnh tfoot, #fnuxntgtnh tr, #fnuxntgtnh td, #fnuxntgtnh th {
   border-style: none;
 }
 
-#nvwnrqrepl p {
+#fnuxntgtnh p {
   margin: 0;
   padding: 0;
 }
 
-#nvwnrqrepl .gt_table {
+#fnuxntgtnh .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -651,12 +650,12 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#nvwnrqrepl .gt_caption {
+#fnuxntgtnh .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#nvwnrqrepl .gt_title {
+#fnuxntgtnh .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -668,7 +667,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   border-bottom-width: 0;
 }
 
-#nvwnrqrepl .gt_subtitle {
+#fnuxntgtnh .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -680,7 +679,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   border-top-width: 0;
 }
 
-#nvwnrqrepl .gt_heading {
+#fnuxntgtnh .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -692,13 +691,13 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#nvwnrqrepl .gt_bottom_border {
+#fnuxntgtnh .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#nvwnrqrepl .gt_col_headings {
+#fnuxntgtnh .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -713,7 +712,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#nvwnrqrepl .gt_col_heading {
+#fnuxntgtnh .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -733,7 +732,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   overflow-x: hidden;
 }
 
-#nvwnrqrepl .gt_column_spanner_outer {
+#fnuxntgtnh .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -745,15 +744,15 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   padding-right: 4px;
 }
 
-#nvwnrqrepl .gt_column_spanner_outer:first-child {
+#fnuxntgtnh .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#nvwnrqrepl .gt_column_spanner_outer:last-child {
+#fnuxntgtnh .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#nvwnrqrepl .gt_column_spanner {
+#fnuxntgtnh .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -765,11 +764,11 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   width: 100%;
 }
 
-#nvwnrqrepl .gt_spanner_row {
+#fnuxntgtnh .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#nvwnrqrepl .gt_group_heading {
+#fnuxntgtnh .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -795,7 +794,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   text-align: left;
 }
 
-#nvwnrqrepl .gt_empty_group_heading {
+#fnuxntgtnh .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -810,15 +809,15 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   vertical-align: middle;
 }
 
-#nvwnrqrepl .gt_from_md > :first-child {
+#fnuxntgtnh .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#nvwnrqrepl .gt_from_md > :last-child {
+#fnuxntgtnh .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#nvwnrqrepl .gt_row {
+#fnuxntgtnh .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -837,7 +836,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   overflow-x: hidden;
 }
 
-#nvwnrqrepl .gt_stub {
+#fnuxntgtnh .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -850,7 +849,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   padding-right: 5px;
 }
 
-#nvwnrqrepl .gt_stub_row_group {
+#fnuxntgtnh .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -864,15 +863,15 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   vertical-align: top;
 }
 
-#nvwnrqrepl .gt_row_group_first td {
+#fnuxntgtnh .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#nvwnrqrepl .gt_row_group_first th {
+#fnuxntgtnh .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#nvwnrqrepl .gt_summary_row {
+#fnuxntgtnh .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -882,16 +881,16 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   padding-right: 5px;
 }
 
-#nvwnrqrepl .gt_first_summary_row {
+#fnuxntgtnh .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#nvwnrqrepl .gt_first_summary_row.thick {
+#fnuxntgtnh .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#nvwnrqrepl .gt_last_summary_row {
+#fnuxntgtnh .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -901,7 +900,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#nvwnrqrepl .gt_grand_summary_row {
+#fnuxntgtnh .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -911,7 +910,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   padding-right: 5px;
 }
 
-#nvwnrqrepl .gt_first_grand_summary_row {
+#fnuxntgtnh .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -921,7 +920,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#nvwnrqrepl .gt_last_grand_summary_row_top {
+#fnuxntgtnh .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -931,11 +930,11 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#nvwnrqrepl .gt_striped {
+#fnuxntgtnh .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#nvwnrqrepl .gt_table_body {
+#fnuxntgtnh .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -944,7 +943,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#nvwnrqrepl .gt_footnotes {
+#fnuxntgtnh .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -958,7 +957,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#nvwnrqrepl .gt_footnote {
+#fnuxntgtnh .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -967,7 +966,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   padding-right: 5px;
 }
 
-#nvwnrqrepl .gt_sourcenotes {
+#fnuxntgtnh .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -981,7 +980,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#nvwnrqrepl .gt_sourcenote {
+#fnuxntgtnh .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -989,72 +988,72 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   padding-right: 5px;
 }
 
-#nvwnrqrepl .gt_left {
+#fnuxntgtnh .gt_left {
   text-align: left;
 }
 
-#nvwnrqrepl .gt_center {
+#fnuxntgtnh .gt_center {
   text-align: center;
 }
 
-#nvwnrqrepl .gt_right {
+#fnuxntgtnh .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#nvwnrqrepl .gt_font_normal {
+#fnuxntgtnh .gt_font_normal {
   font-weight: normal;
 }
 
-#nvwnrqrepl .gt_font_bold {
+#fnuxntgtnh .gt_font_bold {
   font-weight: bold;
 }
 
-#nvwnrqrepl .gt_font_italic {
+#fnuxntgtnh .gt_font_italic {
   font-style: italic;
 }
 
-#nvwnrqrepl .gt_super {
+#fnuxntgtnh .gt_super {
   font-size: 65%;
 }
 
-#nvwnrqrepl .gt_footnote_marks {
+#fnuxntgtnh .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#nvwnrqrepl .gt_asterisk {
+#fnuxntgtnh .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#nvwnrqrepl .gt_indent_1 {
+#fnuxntgtnh .gt_indent_1 {
   text-indent: 5px;
 }
 
-#nvwnrqrepl .gt_indent_2 {
+#fnuxntgtnh .gt_indent_2 {
   text-indent: 10px;
 }
 
-#nvwnrqrepl .gt_indent_3 {
+#fnuxntgtnh .gt_indent_3 {
   text-indent: 15px;
 }
 
-#nvwnrqrepl .gt_indent_4 {
+#fnuxntgtnh .gt_indent_4 {
   text-indent: 20px;
 }
 
-#nvwnrqrepl .gt_indent_5 {
+#fnuxntgtnh .gt_indent_5 {
   text-indent: 25px;
 }
 
-#nvwnrqrepl .katex-display {
+#fnuxntgtnh .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#nvwnrqrepl div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#fnuxntgtnh div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>

@@ -35,7 +35,7 @@ graphiques, des cartes et bien sûr des régressions.
 
 Parmi l'ensemble des langages, `R` présente plusieurs avantages:
 
--   `R` est un langage *open-soure*. Le logiciel est gratuit et
+-   `R` est un langage *open-source*. Le logiciel est gratuit et
     quiconque peut disposer du code afin de l'améliorer ou d'en proposer
     des variantes.
 -   `R` présente une importante communauté d'utilisateur$\cdot$ices qui
@@ -46,7 +46,9 @@ Parmi l'ensemble des langages, `R` présente plusieurs avantages:
 
 Ces contributions sont faites sous forme de librairies : des fonctions
 pré-faites qui permettent *(i)* de simplifier l'usage de `R` et *(ii)*
-de réaliser des tâches complexes. Avant de discuter l'utilisation des librairies en `R`, nous allons présenter l'environnement dans lequel nous utiliserons `R`.
+de réaliser des tâches complexes. Avant de discuter l'utilisation des
+librairies en `R`, nous allons présenter l'environnement dans lequel
+nous utiliserons `R`.
 
 # Rstudio
 
@@ -55,30 +57,62 @@ L'environnement de développement le plus populaire pour `R` est
 et gratuit. Tel que représenté ci-dessous, **Rstudio** affiche 4
 cadrans.
 
-![Environnement de programmation Rstudio](/images/Rstudio_screenshot.png)
+![Environnement de programmation
+Rstudio](/images/Rstudio_screenshot.png)
 
-  1. Le cadran 1 est l'espace du script. C'est là que l'on rédige son code.
-  
-  2. Le cadran 2 est l'espace des données. C'est là que sont listés tous les `data.frame`, ou d'autres "objets" tels que des listes, des vecteurs de données, ou des résultats de régressions.
-  
-  3. Le cadran 3 est constitué de plusieurs panneaux, les principaux étant:
-        - *Files* permet de naviguer dans son explorateur de fichiers. C'est un accès direct vers nos données et nos scripts.
-        - *Plots* est l'espace dans lequel sont affichés les graphiques.
-        - *Packages* est l'espace listant toutes les librairies installées.
-        - *Help* qui permet de naviguer dans la documentation des librairies. La documentation est un ensemble concernant un logiciel, destiné à sa conception, son utilisation ou sa maintenance. 
-        
-4. Le cadran 4 est l'espace de console. C'est là qu'est interprété le code et que `R` affiche les résultats de ses calculs.
+1.  Le cadran 1 est l'espace du script. C'est là que l'on rédige son
+    code.
+
+2.  Le cadran 2 est l'espace des données. C'est là que sont listés tous
+    les `data.frame`, ou d'autres "objets" tels que des listes, des
+    vecteurs de données, ou des résultats de régressions.
+
+3.  Le cadran 3 est constitué de plusieurs panneaux, les principaux
+    étant:
+
+    -   *Files* permet de naviguer dans son explorateur de fichiers.
+        C'est un accès direct vers nos données et nos scripts.
+    -   *Plots* est l'espace dans lequel sont affichés les graphiques.
+    -   *Packages* est l'espace listant toutes les librairies
+        installées.
+    -   *Help* qui permet de naviguer dans la documentation des
+        librairies. La documentation est un ensemble concernant un
+        logiciel, destiné à sa conception, son utilisation ou sa
+        maintenance.
+
+4.  Le cadran 4 est l'espace de console. C'est là qu'est interprété le
+    code et que `R` affiche les résultats de ses calculs.
 
 ## Créer un espace de travail sur **Rstudio**
 
-Lorsqu'un projet est entamé, il est de bon usage de créer un *projet* `R`. Un projet est un espace dans l'ordinateur où se trouve tout le matériel relatif à un projet. Lorsqu'un projet est construit, il est possible sauvegarder son avancée, de fermer **Rstudio** et de reprendre ultérieurement son travail où il a été laissé. À la réouverture d'un projet, l'environnement de travail affiche automatiquement les scripts, les `data.frame` et le dossier dans lequel se trouve la matériel au sein du disque dur de l'ordinateur.
+Lorsqu'un projet est entamé, il est de bon usage de créer un *projet*
+`R`. Un projet est un espace dans l'ordinateur où se trouve tout le
+matériel relatif à un projet. Lorsqu'un projet est construit, il est
+possible sauvegarder son avancée, de fermer **Rstudio** et de reprendre
+ultérieurement son travail où il a été laissé. À la réouverture d'un
+projet, l'environnement de travail affiche automatiquement les scripts,
+les `data.frame` et le dossier dans lequel se trouve le matériel au sein
+du disque dur de l'ordinateur.
 
-  1. **Créer un projet**: en haut à gauche, sélectionnez `File > New project` en veillant à choisir pertinemment le nom et l'emplacement dans votre ordinateur (pas dans un fichier appartenant à un cloud par exemple). Lorsque le dossier du projet **Rstudio** est créé, vous pouvez ajouter votre base de données dans ce dossier.  
-  2. **Créer un script**: en haut à gauche, sélectionnez `File > New file > R script`.
-  
-Désormais, vous disposez d'un espace de travail dans lequel vous pourrez analyser vos données. Pour ce faire, vous emploierez une diversité d'outils. Néanmoins, tous les outils ne sont pas disponibles par défaut sur `R`: vous devrez installer des "boîtes à outils" que sont les *librairies*. La prochaine section discute l'usage des librairies, après quoi nous passerons à l'analyse de données.
-  
-Afin de vous entraîner, il est suggéré de lancer *Rstudio* et d'exécuter les codes `R` sur votre machine en même temps que vous parcourez ce tutoriel, afin de vous familiariser avec le langage.
+1.  **Créer un projet**: en haut à gauche, sélectionnez
+    `File > New project` en veillant à choisir pertinemment le nom et
+    l'emplacement dans votre ordinateur (pas dans un fichier appartenant
+    à un cloud par exemple). Lorsque le dossier du projet **Rstudio**
+    est créé, vous pouvez ajouter votre base de données dans ce
+    dossier.\
+2.  **Créer un script**: en haut à gauche, sélectionnez
+    `File > New file > R script`.
+
+Désormais, vous disposez d'un espace de travail dans lequel vous pourrez
+analyser vos données. Pour ce faire, vous emploierez une diversité
+d'outils. Néanmoins, tous les outils ne sont pas disponibles par défaut
+sur `R`: vous devrez installer des "boîtes à outils" que sont les
+*librairies*. La prochaine section discute l'usage des librairies, après
+quoi nous passerons à l'analyse de données et la visualisation de données.
+
+Afin de vous entraîner, il est suggéré de lancer *Rstudio* et d'exécuter
+les codes `R` sur votre machine en même temps que vous parcourez ce
+tutoriel, afin de vous familiariser avec le langage.
 
 # Une librairie
 
@@ -87,10 +121,10 @@ primitif de `R`.Le langage de programmation `R` est utilisable avec un
 ensemble de fonctions que l'on appelle *base functions*. Ces fonctions
 de base permettent de réaliser des opérations fondamentales. Outre ces
 fonctions, il existe une syntaxe basique qui nous permet d'interagir
-avec des objets de `R`. Prenons l'example d'une base de données d'automobiles,
-nommée `mtcars`. Elle est consitutée de 32 observations (32
-modèles) et de 11 variables. L'objet de base de données pour `R` est le
-`data.frame`.
+avec des objets de `R`. Prenons l'example d'une base de données
+d'automobiles, nommée `mtcars`. Elle est constiutée de 32 observations
+(32 modèles) et de 11 variables. L'objet de base de données pour `R` est
+le `data.frame`.
 
 En *base* `R`, il est possible de sélectionner précisément des rangées
 et des colonnes d'une base de donnée `df`. Si l'on souhaite prendre les
@@ -116,59 +150,83 @@ ajouter une deuxième couche de filtre en réemployant des crochets:
 mtcars[5:9,c(2,4,6)][which(mtcars[5:9,"wt"]>3.4),]
 ```
 
-L'exercice devient laborieux et très rapidement illisible. `Tidyverse` est une librairie qui permet, entre autre, d'interagir beaucoup plus simplement avec des `data.frame`. Utiliser une librairie nécessite deux étapes:
+L'exercice devient laborieux et très rapidement illisible. `Tidyverse`
+est une librairie qui permet, entre autre, d'interagir beaucoup plus
+simplement avec des `data.frame`. Utiliser une librairie nécessite deux
+étapes:
 
->  1. Installer la librairie
->  2. Charger la librairie
-  
-Il ne faut installer la librairie qu'une seule fois sur sa machine. En revanche, il sera nécessaire de charger une librairie à chaque fois que l'on redémarre `R`. Dans votre script, rédigez:
+> **1.  Installer la librairie**
+> **2.  Charger la librairie**
 
-```{r,eval=FALSE} 
+Il ne faut installer la librairie qu'une seule fois sur sa machine. En
+revanche, il sera nécessaire de charger une librairie à chaque fois que
+l'on redémarre `R`. Dans votre script, rédigez:
+
+```{r,eval=FALSE}
 
 install.packages("tidyverse") # Installation de la librairie sur la machine
 library('tidyverse') # Chargement de la librairie dans la session
 ```
 
-Pour exécuter ce code, cliquez sur `Run` en haut à droite dans le cadran 1. Ceci exécutera l'intégralité du code contenu dans votre script. Si vous souhaitez exécuter partiellement votre code, sélectionnez le morceau de code en question avec votre curseur et composez `CTRL + Enter`. Votre console devrait afficher:
-```{r,warning=FALSE,message=TRUE, echo=FALSE} 
+Pour exécuter ce code, cliquez sur `Run` en haut à droite du cadran 1. Ceci exécutera l'intégralité du code contenu dans votre
+script. Si vous souhaitez exécuter partiellement votre code,
+sélectionnez le morceau de code en question avec votre curseur et
+composez `CTRL + Enter`. Votre console devrait afficher:
+
+```{r,warning=FALSE,message=TRUE, echo=FALSE}
 library('tidyverse') # Chargement de la librairie dans la session
 ```
 
-Il est désormais possible de recourir aux outils du `Tidyverse`. Le premier outil que nous allons voir est le ***pipe*** `%>%`. Il permet d'alléger la rédaction de transformation de données ainsi que sa lecture. Formellement, les ` %>% ` transforment `x %>% f(y)` en `f(x,y)`. 
+Il est désormais possible de recourir aux outils du `Tidyverse`. Le
+premier outil que nous allons voir est le ***pipe*** `%>%`. Il permet
+d'alléger la rédaction de transformation de données ainsi que sa
+lecture. Formellement, les `%>%` transforment `x %>% f(y)` en `f(x,y)`.
 
-Grâce au pipe, il sera possible de lire et interpréter le fonctionnement d'un code de gauche à droite, en le combinant avec diverses fonctions. Reprenons l'exemple précédent dans lequel nous sélectionnions des modèles selon la condition $wt>3.4$. En base `R`, nous rédigions:
+Grâce au *pipe*, il sera possible de lire et interpréter le fonctionnement
+d'un code de gauche à droite, en le combinant à diverses fonctions.
+Reprenons l'exemple précédent dans lequel nous sélectionnions des
+modèles selon la condition $wt>3.4$. En base `R`, nous rédigions:
 
 ```{r,eval=FALSE}
 mtcars[5:9,c(2,4,6)][which(mtcars[5:9,"wt"]>3.4),]
-``` 
+```
 
-Nous procédions à 3 opérations: *(i)* couper certaines rangées du `data.frame`, *(ii)* sélectionner 3 variables et *(iii)* filtrer conditionnellement les observations. Grâce aux outils du `tidyverse`, ceci peut être fait, dans le même ordre, de la façon suivante:
+Nous procédions à 3 opérations: *(i)* couper certaines rangées du
+`data.frame`, *(ii)* sélectionner 3 variables et *(iii)* filtrer
+conditionnellement les observations. Grâce aux outils du `tidyverse`,
+ceci peut être fait, dans le même ordre, de la façon suivante:
+
 ```{r}
 mtcars %>% slice(5:9) %>% select(cyl,hp,wt) %>% filter(wt>3.4)
 ```
 
-Beaucoup plus lisible ! 
+Beaucoup plus lisible !
 
-Les sections suivantes ont pour objectif de présenter synthétiquement des fonctions utiles au traitement de données, après quoi nous verrons comment effectuer des régressions et visualiser nos données.
-
+Les sections suivantes ont pour objectif de présenter synthétiquement
+des fonctions utiles au traitement de données, après quoi nous verrons
+comment effectuer des régressions et visualiser nos données.
 
 ## Le Tidyverse : fonctions essentielles
 
 ### `filter()` — Filtrer des lignes
 
-`filter()` conserve uniquement les lignes qui satisfont une condition logique.
+`filter()` conserve uniquement les lignes qui satisfont une condition
+logique.
+
 ```{r}
 # Voitures avec plus de 6 cylindres et moins de 3 tonnes
 mtcars %>% filter(cyl > 6, wt < 3)
 ```
 
 ### `slice()` — Sélectionner des lignes par position
+
 ```{r}
 # Lignes 1 à 5
 mtcars %>% slice(1:5)
 ```
 
 ### `select()` — Sélectionner des colonnes
+
 ```{r}
 # Garder uniquement le nombre de cylindres, la puissance et le poids
 mtcars[1:5,] %>% select(cyl, hp, wt) # N'affiche que les 5 premières observations
@@ -178,12 +236,14 @@ mtcars[1:5,] %>% select(-qsec)
 ```
 
 ### `rename()` — Renommer des colonnes
+
 ```{r}
 # Syntaxe : rename(nouveau_nom = ancien_nom)
 mtcars[1:5,]  %>% rename(poids = wt, puissance = hp)
 ```
 
 ### `mutate()` — Créer ou transformer des colonnes
+
 ```{r}
 # Convertir le poids de milliers de livres en kilogrammes
 # La syntaxe de mutate est : data.frame %>%  mutate(NouvelleVariable= transformation de variables))
@@ -192,8 +252,9 @@ mtcars[1:5,]  %>% mutate(poids_kg = wt * 453.6) %>% select(wt, poids_kg)
 
 ### `group_by()` et `summarise()` — Agréger par groupe
 
-`group_by()` seul ne modifie pas les données visuellement, mais il indique à R
-d'effectuer les opérations suivantes **par groupe**.
+`group_by()` seul ne modifie pas les données visuellement, mais il
+indique à R d'effectuer les opérations suivantes **par groupe**.
+
 ```{r}
 # Consommation moyenne et puissance moyenne selon le nombre de cylindres
 mtcars %>%
@@ -203,77 +264,84 @@ mtcars %>%
   )
 ```
 
----
+------------------------------------------------------------------------
 
 # Régression linéaire avec `lm()`
 
 ### Rappel théorique
 
-Une régression OLS (*Ordinary Least Squares*) modélise la relation entre une
-variable dépendante $y$ et des variables explicatives $X$ :
+Une régression OLS (*Ordinary Least Squares*) modélise la relation entre
+une variable dépendante $y$ et des variables explicatives $X$ :
 
 $$y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_k x_k + \varepsilon$$
 
-On cherche les coefficients $\hat{\beta}$ qui **minimisent la somme des carrés
-des résidus** :
+On cherche les coefficients $\hat{\beta}$ qui **minimisent la somme des
+carrés des résidus** :
 
 $$\hat{\beta} = \underset{\beta}{\arg\min} \sum_{i=1}^{n}(y_i - \hat{y}_i)^2$$
 et obtenir
 
 $$\hat{y} = \hat{\beta}_0 + \hat{\beta}_1 x_1 + \hat{\beta}_2 x_2 + \cdots + \hat{\beta}_k x_k $$
 
-
 ## Ajuster un modèle avec `lm()`
 
-Il existe une fonction en `R` qui permet de calculer ces coefficients, la fonction `lm()` (pour *linear model*). Appliquons cette fonction à la base de données de téléphones discutées en séance d'introduction. Celle-ci était constituée de 28 observations et des variables suivantes :
+Il existe une fonction en `R` qui permet de calculer ces coefficients,
+la fonction `lm()` (pour *linear model*). Appliquons cette fonction à la
+base de données de téléphones discutée en séance d'introduction.
+Celle-ci était constituée de 28 observations et des variables suivantes
+:
+
 ```{r,echo=FALSE}
  phonesdf %>% colnames
 ```
 
-
 La syntaxe de base est `lm(y ~ x1 + x2, data = ...)`.
+
 ```{r}
-# Modèle : consommation (mpg) ~ poids (wt) + puissance (hp)
 modele <- lm(price~ Poids + megapixels + factor(age) + RAM + 
          stockage + (`Qualité de la caméra`)+(Marque),
          data = phonesdf)
-summary(modele)
+summary(modele) 
 ```
 
 > **Lecture des résultats :**
 >
-> - **Estimate** : valeur de $\hat{\beta}$ pour chaque prédicteur
-> - **Pr(>\|t\|)** : p-valeur — un astérisque `*` indique une significativité à 5 %
-> - **R²** : part de variance de $y$ expliquée par le modèle
+> -   **Estimate** : valeur de $\hat{\beta}$ pour chaque prédicteur
+> -   **Pr(\>\|t\|)** : p-valeur — un astérisque `*` indique une
+>     significativité à 5 %
+> -   **R²** : part de variance de $y$ expliquée par le modèle
 
 ### Accéder aux résultats programmatiquement
-::: {.panel-tabset}
 
+::: panel-tabset
 ## Coefficients
+
 ```{r}
 coef(modele)
 ```
 
 ## Intervalles de confiance
+
 ```{r}
 confint(modele)
 ```
-
 :::
 
----
+------------------------------------------------------------------------
 
 # Exporter ses résultats de régression avec `gtsummary`
 
-Présenter les résultats d'une régression dans un rapport nécessite un tableau
-lisible et formaté. La librairie `gtsummary` permet de produire
+Présenter les résultats d'une régression dans un rapport nécessite un
+tableau lisible et formaté. La librairie `gtsummary` permet de produire
 automatiquement des tableaux de régression, exportables en Word.
 
 Installez et chargez les librairies nécessaires :
+
 ```{r, eval=FALSE}
 install.packages("gtsummary")
 install.packages("flextable")
 ```
+
 ```{r, warning=FALSE, message=FALSE}
 library(gtsummary)
 library(flextable)
@@ -281,9 +349,10 @@ library(flextable)
 
 ### Construire le tableau de régression
 
-`tbl_regression()` prend en entrée un objet `lm()` et produit automatiquement
-un tableau mis en forme avec les coefficients, intervalles de confiance et
-p-valeurs.
+`tbl_regression()` prend en entrée un objet `lm()` et produit
+automatiquement un tableau mis en forme avec les coefficients,
+intervalles de confiance et p-valeurs.
+
 ```{r}
 # On suppose que le modèle a déjà été estimé :
 # mmodele <- lm(y ~ x1 + x2, data = mes_données)
@@ -292,32 +361,36 @@ tbl <- tbl_regression(modele, intercept = TRUE)
 tbl
 ```
 
-> **Note :** l'argument `intercept = TRUE` force l'affichage de la constante
-> $\hat{\beta}_0$, qui est masquée par défaut.
+> **Note :** l'argument `intercept = TRUE` force l'affichage de la
+> constante $\hat{\beta}_0$, qui est masquée par défaut.
 
 ### Exporter le tableau en Word
 
-Une fois le tableau construit, on le convertit en objet `flextable` puis on
-l'exporte directement en fichier `.docx` :
+Une fois le tableau construit, on le convertit en objet `flextable` puis
+on l'exporte directement en fichier `.docx` :
+
 ```{r, eval=FALSE}
 gt <- as_flex_table(tbl)              # Conversion en flextable
 flextable::save_as_docx(gt, path = "reg_table.docx")  # Export en Word
 ```
 
-Le fichier `reg_table.docx` apparaît dans le dossier de votre projet et peut
-être directement intégré à un rapport.
+Le fichier `reg_table.docx` apparaît dans le dossier de votre projet et
+peut être directement intégré à un rapport.
 
-
----
-
+------------------------------------------------------------------------
 
 # Visualisation avec `ggplot2`
 
-`ggplot2` est une librairie de visualisation basée sur la grammaire des graphiques, qui consiste à construire un graphique couche par couche en ajoutant des éléments superposés. Sa flexibilité et la lisibilité de son code en font la librairie de visualisation la plus utilisée dans l'écosystème `R`.
+`ggplot2` est une librairie de visualisation basée sur la grammaire des
+graphiques, qui consiste à construire un graphique couche par couche en
+ajoutant des éléments superposés. Sa flexibilité et la lisibilité de son
+code en font la librairie de visualisation la plus utilisée dans
+l'écosystème `R`.
 
-`ggplot2` repose sur une **grammaire des graphiques** : on empile des couches
-(*layers*) avec `+`.
-```
+`ggplot2` repose sur une **grammaire des graphiques** : on empile des
+couches (*layers*) avec `+`.
+
+```         
 ggplot(data, aes(x = ..., y = ...)) +   # données et axes
   geom_*() +                             # type de graphique
   labs() +                               # titres et étiquettes
@@ -325,6 +398,7 @@ ggplot(data, aes(x = ..., y = ...)) +   # données et axes
 ```
 
 ### Nuage de points avec droite de régression
+
 ```{r}
 #| warning: false
 mtcars %>%
@@ -341,6 +415,7 @@ mtcars %>%
 ```
 
 ### Boîtes à moustaches (*boxplot*)
+
 ```{r}
 mtcars %>%
   mutate(cyl = factor(cyl)) %>%
@@ -356,6 +431,7 @@ mtcars %>%
 ```
 
 ### Histogramme
+
 ```{r}
 mtcars %>%
   ggplot(aes(x = mpg)) +
@@ -370,7 +446,9 @@ mtcars %>%
 
 ### Combiner `ggplot2` et `dplyr`
 
-On peut passer directement un tableau transformé à `ggplot2` via le pipe :
+On peut passer directement un tableau transformé à `ggplot2` via le pipe
+:
+
 ```{r}
 mtcars %>%
   group_by(cyl) %>%
@@ -387,12 +465,15 @@ mtcars %>%
   theme(legend.position = "none")
 ```
 
-
 ### Représentation des résultats d'une régression
 
-Enfin, nous pouvons représenter les résultats de notre régression hédonique sur les prix de smartphones avec `ggplot`.
+Enfin, nous pouvons représenter les résultats de notre régression
+hédonique sur les prix de smartphones avec `ggplot`.
+
 ```{r}
-library("tidymodels") #libraire utile pour transformer nos tables de régressions en data.frame
+library("tidymodels") 
+# tidy models est une libraire utile pour transformer nos tables de régressions en data.frame
+# ggplot a besoin comme élément d'entrée de data.frame pour produire des graphiques
 
 tidy(modele)%>%
 # tidy transforme l'objet modele qui est un format lm en data.frame, interprétable par ggplot.
@@ -411,9 +492,6 @@ tidy(modele)%>%
   theme_minimal(base_size = 13)
 ```
 
-**Rstudio** produira dans le cadran 3 un graphique. Il et possible d'exporter cette image sous fichier `.png` et de l'enregistrer afin de l'inclure dans un document de traitement de texte.
-
-
-
-
-
+**Rstudio** produira dans le cadran 3 un graphique. Il est possible
+d'exporter cette image sous fichier `.png` et de l'enregistrer afin de
+l'inclure dans un document de traitement de texte.
