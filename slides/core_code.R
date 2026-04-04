@@ -37,7 +37,8 @@ phonesdf <- phones %>%
          `Qualité de la caméra`=relevel(`Qualité de la caméra`,"Bon")) %>% 
   filter(Marque!="Refurbished") %>% mutate(meanprice=mean(price)) 
 
-phonesdf %>% tibble
+saveRDS(phonesdf,"phonesdf.RDS")
+zphonesdf %>% tibble
 phonesdf %>% colnames
 
 
@@ -53,7 +54,7 @@ preg2 <- linear_reg() %>%
          megapixels + factor(age) + RAM + 
          stockage + (`Qualité de la caméra`)+(Marque), data = phonesdf) 
 
-tidy(preg2)%>% 
+tidy(modele)%>% 
   mutate(term = reorder(term, estimate),
     conf.low  = estimate - 1.96 * std.error,
     conf.high = estimate + 1.96 * std.error) %>%

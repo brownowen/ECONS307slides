@@ -5,10 +5,13 @@ editor: visual
 toc: TRUE 
 toc-title: Sections
 toc-depth: 4
+tabsets: true
 ---
 
-```{r}
+```{r,echo=FALSE}
+phonesdf <- readRDS("../material/phonesdf.RDS")
 data(mtcars)
+library("tidymodels")
 ```
 
 Dans le cadre du séminaire, les étudiant$\cdot$es seront amené$\cdot$es
@@ -128,12 +131,10 @@ library('tidyverse') # Chargement de la librairie dans la session
 
 Pour exécuter ce code, cliquez sur `Run` en haut à droite dans le cadran 1. Ceci exécutera l'intégralité du code contenu dans votre script. Si vous souhaitez exécuter partiellement votre code, sélectionnez le morceau de code en question avec votre curseur et composez `CTRL + Enter`. Votre console devrait afficher:
 ```{r,warning=FALSE,message=TRUE, echo=FALSE} 
-
-#install.packages("tidyverse") # Installation de la librairie sur la machine
 library('tidyverse') # Chargement de la librairie dans la session
 ```
 
-Il est désormais possible de recourir aux outils du `Tidyverse`. Le premier outil que nous allons voir est le ***pipe*** `%>%`. Il permet d'alléger la rédaction de transformation de données ainsi que sa lecture.
+Il est désormais possible de recourir aux outils du `Tidyverse`. Le premier outil que nous allons voir est le ***pipe*** `%>%`. Il permet d'alléger la rédaction de transformation de données ainsi que sa lecture. Formellement, les ` %>% ` transforment `x %>% f(y)` en `f(x,y)`. 
 
 Grâce au pipe, il sera possible de lire et interpréter le fonctionnement d'un code de gauche à droite, en le combinant avec diverses fonctions. Reprenons l'exemple précédent dans lequel nous sélectionnions des modèles selon la condition $wt>3.4$. En base `R`, nous rédigions:
 
@@ -141,23 +142,272 @@ Grâce au pipe, il sera possible de lire et interpréter le fonctionnement d'un 
 mtcars[5:9,c(2,4,6)][which(mtcars[5:9,"wt"]>3.4),]
 ``` 
 
-Nous procédions à 3 opérations: *(i)* couper certaines rangées du `data.frame`, *(ii)* sélectionner 3 variables et *(iii)* filtrer conditionnellement les observations. Grâce aux outils du `tidyverse`, ceci peut être fait de la façon suivante:
+Nous procédions à 3 opérations: *(i)* couper certaines rangées du `data.frame`, *(ii)* sélectionner 3 variables et *(iii)* filtrer conditionnellement les observations. Grâce aux outils du `tidyverse`, ceci peut être fait, dans le même ordre, de la façon suivante:
 ```{r}
 mtcars %>% slice(5:9) %>% select(cyl,hp,wt) %>% filter(wt>3.4)
 ```
 
 Beaucoup plus lisible ! 
 
-#AJOUTER CHEATSHEET DPLYR
+Les sections suivantes ont pour objectif de présenter synthétiquement des fonctions utiles au traitement de données, après quoi nous verrons comment effectuer des régressions et visualiser nos données.
+
+
+## Le Tidyverse : fonctions essentielles
+
+### `filter()` — Filtrer des lignes
+
+`filter()` conserve uniquement les lignes qui satisfont une condition logique.
+```{r}
+# Voitures avec plus de 6 cylindres et moins de 3 tonnes
+mtcars %>% filter(cyl > 6, wt < 3)
+```
+
+### `slice()` — Sélectionner des lignes par position
+```{r}
+# Lignes 1 à 5
+mtcars %>% slice(1:5)
+```
+
+### `select()` — Sélectionner des colonnes
+```{r}
+# Garder uniquement le nombre de cylindres, la puissance et le poids
+mtcars[1:5,] %>% select(cyl, hp, wt) # N'affiche que les 5 premières observations
+
+# Exclure une colonne avec le signe -
+mtcars[1:5,] %>% select(-qsec)
+```
+
+### `rename()` — Renommer des colonnes
+```{r}
+# Syntaxe : rename(nouveau_nom = ancien_nom)
+mtcars[1:5,]  %>% rename(poids = wt, puissance = hp)
+```
+
+### `mutate()` — Créer ou transformer des colonnes
+```{r}
+# Convertir le poids de milliers de livres en kilogrammes
+# La syntaxe de mutate est : data.frame %>%  mutate(NouvelleVariable= transformation de variables))
+mtcars[1:5,]  %>% mutate(poids_kg = wt * 453.6) %>% select(wt, poids_kg)
+```
+
+### `group_by()` et `summarise()` — Agréger par groupe
+
+`group_by()` seul ne modifie pas les données visuellement, mais il indique à R
+d'effectuer les opérations suivantes **par groupe**.
+```{r}
+# Consommation moyenne et puissance moyenne selon le nombre de cylindres
+mtcars %>%
+  group_by(cyl) %>%
+  summarise(mpg_moyen  = mean(mpg),hp_moyen   = mean(hp),
+    n_voitures = n()
+  )
+```
+
+---
+
+## Régression linéaire avec `lm()`
+
+### Rappel théorique
+
+Une régression OLS (*Ordinary Least Squares*) modélise la relation entre une
+variable dépendante $y$ et des variables explicatives $X$ :
+
+$$y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_k x_k + \varepsilon$$
+
+On cherche les coefficients $\hat{\beta}$ qui **minimisent la somme des carrés
+des résidus** :
+
+$$\hat{\beta} = \underset{\beta}{\arg\min} \sum_{i=1}^{n}(y_i - \hat{y}_i)^2$$
+et obtenir
+
+$$\hat{y} = \hat{\beta}_0 + \hat{\beta}_1 x_1 + \hat{\beta}_2 x_2 + \cdots + \hat{\beta}_k x_k $$
+
+
+##Ajuster un modèle avec `lm()`
+
+Il existe une fonction en `R` qui permet de calculer ces coefficients, la fonction `lm()` (pour *linear model*). Appliquons cette fonction à la base de données de téléphones discutées en séance d'introduction. Celle-ci était constituée de 28 observations et des variables suivantes :
+```{r,echo=FALSE}
+ phonesdf %>% colnames
+```
+
+
+La syntaxe de base est `lm(y ~ x1 + x2, data = ...)`.
+```{r}
+# Modèle : consommation (mpg) ~ poids (wt) + puissance (hp)
+modele <- lm(price~ Poids + megapixels + factor(age) + RAM + 
+         stockage + (`Qualité de la caméra`)+(Marque),
+         data = phonesdf)
+summary(modele)
+```
+
+> **Lecture des résultats :**
+>
+> - **Estimate** : valeur de $\hat{\beta}$ pour chaque prédicteur
+> - **Pr(>\|t\|)** : p-valeur — un astérisque `*` indique une significativité à 5 %
+> - **R²** : part de variance de $y$ expliquée par le modèle
+
+### Accéder aux résultats programmatiquement
+::: {.panel-tabset}
+
+## Coefficients
+```{r}
+coef(modele)
+```
+
+## Intervalles de confiance
+```{r}
+confint(modele)
+```
+
+## Valeurs prédites
+```{r}
+fitted(modele)
+```
+
+:::
+
+---
+
+## Exporter ses résultats de régression avec `gtsummary`
+
+Présenter les résultats d'une régression dans un rapport nécessite un tableau
+lisible et formaté. La librairie `gtsummary` permet de produire
+automatiquement des tableaux de régression, exportables en Word.
+
+Installez et chargez les librairies nécessaires :
+```{r, eval=FALSE}
+install.packages("gtsummary")
+install.packages("flextable")
+```
+```{r, warning=FALSE, message=FALSE}
+library(gtsummary)
+library(flextable)
+```
+
+### Construire le tableau de régression
+
+`tbl_regression()` prend en entrée un objet `lm()` et produit automatiquement
+un tableau mis en forme avec les coefficients, intervalles de confiance et
+p-valeurs.
+```{r}
+# On suppose que le modèle a déjà été estimé :
+# preg <- lm(y ~ x1 + x2, data = mes_données)
+
+tbl <- tbl_regression(modele, intercept = TRUE)
+tbl
+```
+
+> **Note :** l'argument `intercept = TRUE` force l'affichage de la constante
+> $\hat{\beta}_0$, qui est masquée par défaut.
+
+### Exporter le tableau en Word
+
+Une fois le tableau construit, on le convertit en objet `flextable` puis on
+l'exporte directement en fichier `.docx` :
+```{r, eval=FALSE}
+gt <- as_flex_table(tbl)              # Conversion en flextable
+flextable::save_as_docx(gt, path = "reg_table.docx")  # Export en Word
+```
+
+Le fichier `reg_table.docx` apparaît dans le dossier de votre projet et peut
+être directement intégré à un rapport.
 
 
 
+## Visualisation avec `ggplot2`
 
+`ggplot2` repose sur une **grammaire des graphiques** : on empile des couches
+(*layers*) avec `+`.
+```
+ggplot(data, aes(x = ..., y = ...)) +   # données et axes
+  geom_*() +                             # type de graphique
+  labs() +                               # titres et étiquettes
+  theme_*()                              # style visuel
+```
 
+### Nuage de points avec droite de régression
+```{r}
+#| warning: false
+mtcars %>%
+  ggplot(aes(x = wt, y = mpg, color = factor(cyl))) +
+  geom_point(size = 3) +
+  geom_smooth(method = "lm", se = TRUE, color = "grey40") +
+  labs(
+    title  = "Consommation en fonction du poids",
+    x      = "Poids (x1000 lbs)",
+    y      = "Miles par gallon",
+    color  = "Cylindres"
+  ) +
+  theme_minimal()
+```
 
+### Boîtes à moustaches (*boxplot*)
+```{r}
+mtcars %>%
+  mutate(cyl = factor(cyl)) %>%
+  ggplot(aes(x = cyl, y = mpg, fill = cyl)) +
+  geom_boxplot(alpha = 0.7) +
+  labs(
+    title = "Distribution de la consommation par nombre de cylindres",
+    x     = "Nombre de cylindres",
+    y     = "Miles par gallon"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
 
+### Histogramme
+```{r}
+mtcars %>%
+  ggplot(aes(x = mpg)) +
+  geom_histogram(binwidth = 3, fill = "steelblue", color = "white") +
+  labs(
+    title = "Distribution de la consommation",
+    x     = "Miles par gallon",
+    y     = "Fréquence"
+  ) +
+  theme_minimal()
+```
 
+### Combiner `ggplot2` et `dplyr`
 
+On peut passer directement un tableau transformé à `ggplot2` via le pipe :
+```{r}
+mtcars %>%
+  group_by(cyl) %>%
+  summarise(mpg_moyen = mean(mpg)) %>%
+  mutate(cyl = factor(cyl)) %>%
+  ggplot(aes(x = cyl, y = mpg_moyen, fill = cyl)) +
+  geom_col(width = 0.5) +
+  labs(
+    title = "Consommation moyenne par nombre de cylindres",
+    x     = "Cylindres",
+    y     = "MPG moyen"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+
+Enfin, nous pouvons représenter les résultats de notre régression hédonique sur les prix de smartphones avec `ggplot`.
+```{r}
+library("tidymodels") #libraire utile pour transformer nos tables de régressions en data.frame
+
+tidy(modele)%>%
+# tidy transforme l'objet modele qui est un format lm en data.frame, interprétable par ggplot.
+  mutate(term = reorder(term, estimate),
+    conf.low  = estimate - 1.96 * std.error,
+    conf.high = estimate + 1.96 * std.error) %>%
+  ggplot(aes(x = estimate, y = term)) +
+  geom_vline(xintercept = 0, linetype = "dashed", color = "grey50") +
+  geom_errorbarh(aes(xmin = conf.low, xmax = conf.high),
+    height = 0.2,
+    color = "grey40") +
+  geom_point(size = 3, color = "#0072B2") +
+  labs(x = "Coefficient estimate",
+    y = NULL,
+    title = "Coefficient plot with 95% confidence intervals") +
+  theme_minimal(base_size = 13)
+```
 
 
 

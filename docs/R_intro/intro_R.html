@@ -68,6 +68,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
@@ -184,7 +185,35 @@ window.Quarto = {
   <ul>
   <li><a href="#créer-un-espace-de-travail-sur-rstudio" id="toc-créer-un-espace-de-travail-sur-rstudio" class="nav-link" data-scroll-target="#créer-un-espace-de-travail-sur-rstudio">Créer un espace de travail sur <strong>Rstudio</strong></a></li>
   </ul></li>
-  <li><a href="#une-librairie" id="toc-une-librairie" class="nav-link" data-scroll-target="#une-librairie">Une librairie</a></li>
+  <li><a href="#une-librairie" id="toc-une-librairie" class="nav-link" data-scroll-target="#une-librairie">Une librairie</a>
+  <ul>
+  <li><a href="#le-tidyverse-fonctions-essentielles" id="toc-le-tidyverse-fonctions-essentielles" class="nav-link" data-scroll-target="#le-tidyverse-fonctions-essentielles">Le Tidyverse : fonctions essentielles</a>
+  <ul class="collapse">
+  <li><a href="#filter-filtrer-des-lignes" id="toc-filter-filtrer-des-lignes" class="nav-link" data-scroll-target="#filter-filtrer-des-lignes"><code>filter()</code> — Filtrer des lignes</a></li>
+  <li><a href="#slice-sélectionner-des-lignes-par-position" id="toc-slice-sélectionner-des-lignes-par-position" class="nav-link" data-scroll-target="#slice-sélectionner-des-lignes-par-position"><code>slice()</code> — Sélectionner des lignes par position</a></li>
+  <li><a href="#select-sélectionner-des-colonnes" id="toc-select-sélectionner-des-colonnes" class="nav-link" data-scroll-target="#select-sélectionner-des-colonnes"><code>select()</code> — Sélectionner des colonnes</a></li>
+  <li><a href="#rename-renommer-des-colonnes" id="toc-rename-renommer-des-colonnes" class="nav-link" data-scroll-target="#rename-renommer-des-colonnes"><code>rename()</code> — Renommer des colonnes</a></li>
+  <li><a href="#mutate-créer-ou-transformer-des-colonnes" id="toc-mutate-créer-ou-transformer-des-colonnes" class="nav-link" data-scroll-target="#mutate-créer-ou-transformer-des-colonnes"><code>mutate()</code> — Créer ou transformer des colonnes</a></li>
+  <li><a href="#group_by-et-summarise-agréger-par-groupe" id="toc-group_by-et-summarise-agréger-par-groupe" class="nav-link" data-scroll-target="#group_by-et-summarise-agréger-par-groupe"><code>group_by()</code> et <code>summarise()</code> — Agréger par groupe</a></li>
+  </ul></li>
+  <li><a href="#régression-linéaire-avec-lm" id="toc-régression-linéaire-avec-lm" class="nav-link" data-scroll-target="#régression-linéaire-avec-lm">Régression linéaire avec <code>lm()</code></a>
+  <ul class="collapse">
+  <li><a href="#rappel-théorique" id="toc-rappel-théorique" class="nav-link" data-scroll-target="#rappel-théorique">Rappel théorique</a></li>
+  <li><a href="#accéder-aux-résultats-programmatiquement" id="toc-accéder-aux-résultats-programmatiquement" class="nav-link" data-scroll-target="#accéder-aux-résultats-programmatiquement">Accéder aux résultats programmatiquement</a></li>
+  </ul></li>
+  <li><a href="#exporter-ses-résultats-de-régression-avec-gtsummary" id="toc-exporter-ses-résultats-de-régression-avec-gtsummary" class="nav-link" data-scroll-target="#exporter-ses-résultats-de-régression-avec-gtsummary">Exporter ses résultats de régression avec <code>gtsummary</code></a>
+  <ul class="collapse">
+  <li><a href="#construire-le-tableau-de-régression" id="toc-construire-le-tableau-de-régression" class="nav-link" data-scroll-target="#construire-le-tableau-de-régression">Construire le tableau de régression</a></li>
+  <li><a href="#exporter-le-tableau-en-word" id="toc-exporter-le-tableau-en-word" class="nav-link" data-scroll-target="#exporter-le-tableau-en-word">Exporter le tableau en Word</a></li>
+  </ul></li>
+  <li><a href="#visualisation-avec-ggplot2" id="toc-visualisation-avec-ggplot2" class="nav-link" data-scroll-target="#visualisation-avec-ggplot2">Visualisation avec <code>ggplot2</code></a>
+  <ul class="collapse">
+  <li><a href="#nuage-de-points-avec-droite-de-régression" id="toc-nuage-de-points-avec-droite-de-régression" class="nav-link" data-scroll-target="#nuage-de-points-avec-droite-de-régression">Nuage de points avec droite de régression</a></li>
+  <li><a href="#boîtes-à-moustaches-boxplot" id="toc-boîtes-à-moustaches-boxplot" class="nav-link" data-scroll-target="#boîtes-à-moustaches-boxplot">Boîtes à moustaches (<em>boxplot</em>)</a></li>
+  <li><a href="#histogramme" id="toc-histogramme" class="nav-link" data-scroll-target="#histogramme">Histogramme</a></li>
+  <li><a href="#combiner-ggplot2-et-dplyr" id="toc-combiner-ggplot2-et-dplyr" class="nav-link" data-scroll-target="#combiner-ggplot2-et-dplyr">Combiner <code>ggplot2</code> et <code>dplyr</code></a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -211,7 +240,71 @@ window.Quarto = {
 
 
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'tidymodels' was built under R version 4.4.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching packages ────────────────────────────────────── tidymodels 1.4.1 ──</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>✔ broom        1.0.12     ✔ recipes      1.3.1 
+✔ dials        1.4.2      ✔ rsample      1.3.2 
+✔ dplyr        1.2.0      ✔ tailor       0.1.0 
+✔ ggplot2      3.5.2      ✔ tidyr        1.3.1 
+✔ infer        1.0.9      ✔ tune         2.0.1 
+✔ modeldata    1.5.1      ✔ workflows    1.3.0 
+✔ parsnip      1.4.1      ✔ workflowsets 1.1.1 
+✔ purrr        1.0.2      ✔ yardstick    1.3.2 </code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'broom' was built under R version 4.4.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'dials' was built under R version 4.4.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'dplyr' was built under R version 4.4.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'ggplot2' was built under R version 4.4.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'infer' was built under R version 4.4.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'modeldata' was built under R version 4.4.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'parsnip' was built under R version 4.4.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'recipes' was built under R version 4.4.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'rsample' was built under R version 4.4.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'tailor' was built under R version 4.4.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'tune' was built under R version 4.4.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'workflows' was built under R version 4.4.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'workflowsets' was built under R version 4.4.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'yardstick' was built under R version 4.4.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Conflicts ───────────────────────────────────────── tidymodels_conflicts() ──
+✖ purrr::discard() masks scales::discard()
+✖ dplyr::filter()  masks stats::filter()
+✖ dplyr::lag()     masks stats::lag()
+✖ recipes::step()  masks stats::step()</code></pre>
+</div>
 </div>
 <p>Dans le cadre du séminaire, les étudiant<span class="math inline">\(\cdot\)</span>es seront amené<span class="math inline">\(\cdot\)</span>es à employer des méthodes économétrique afin d’analyser des données et déterminer si l’on peut observer une discrimination sur un segment de marché. Ceci nécessite de recourir à un langage de programmation statistique, à un environnement de programmation et à des librairies. L’objectif de ce parcours est d’expliquer ce que cela signifie et d’introduire les étudiant<span class="math inline">\(\cdot\)</span>es à leur utilisation.</p>
 <section id="un-langage-de-programmation" class="level1">
@@ -262,7 +355,7 @@ window.Quarto = {
 <p>Afin d’illustrer l’intérêt d’une librairie, voyons le fonctionnement primitif de <code>R</code>.Le langage de programmation <code>R</code> est utilisable avec un ensemble de fonctions que l’on appelle <em>base functions</em>. Ces fonctions de base permettent de réaliser des opérations fondamentales. Outre ces fonctions, il existe une syntaxe basique qui nous permet d’interagir avec des objets de <code>R</code>. Prenons l’example d’une base de données d’automobiles, nommée <code>mtcars</code>. Elle est consitutée de 32 observations (32 modèles) et de 11 variables. L’objet de base de données pour <code>R</code> est le <code>data.frame</code>.</p>
 <p>En <em>base</em> <code>R</code>, il est possible de sélectionner précisément des rangées et des colonnes d’une base de donnée <code>df</code>. Si l’on souhaite prendre les rangées de <strong>5</strong> à <strong>9</strong> et les colonnes <strong>2</strong>(<code>cyl</code> pour cylindres) et <strong>4</strong> (<code>hp</code> pour <em>horsepower</em>), il est possible de procéder de la façon suivante:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>mtcars[<span class="dv">5</span><span class="sc">:</span><span class="dv">9</span>,<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>)] </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>mtcars[<span class="dv">5</span><span class="sc">:</span><span class="dv">9</span>,<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>)] </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                  cyl  hp
 Hornet Sportabout   8 175
@@ -275,7 +368,7 @@ Merc 230            4  95</code></pre>
 <p>Où les crochets juxtaposés à un objet <code>data.frame</code> indiquent à R que l’on fixe les [rangées,colonnes] que l’on souhaite.L’objet rendu est à nouveau un <code>data.frame</code> avec lequel il sera à nouveau possible d’interagir avec des crochets.</p>
 <p>Imaginons que l’on souhaite ajouter un degré de complexité et, par exemple, ne conserver que les observations pour lesquelles le poids <code>wt</code> (colonne <strong>6</strong>) est supérieur à <span class="math inline">\(3.4\)</span>. En <em>base</em> <code>R</code>, nous allons ajouter une deuxième couche de filtre en réemployant des crochets:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>mtcars[<span class="dv">5</span><span class="sc">:</span><span class="dv">9</span>,<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>)][<span class="fu">which</span>(mtcars[<span class="dv">5</span><span class="sc">:</span><span class="dv">9</span>,<span class="st">"wt"</span>]<span class="sc">&gt;</span><span class="fl">3.4</span>),]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>mtcars[<span class="dv">5</span><span class="sc">:</span><span class="dv">9</span>,<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>)][<span class="fu">which</span>(mtcars[<span class="dv">5</span><span class="sc">:</span><span class="dv">9</span>,<span class="st">"wt"</span>]<span class="sc">&gt;</span><span class="fl">3.4</span>),]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                  cyl  hp   wt
 Hornet Sportabout   8 175 3.44
@@ -292,32 +385,34 @@ Duster 360          8 245 3.57</code></pre>
 </blockquote>
 <p>Il ne faut installer la librairie qu’une seule fois sur sa machine. En revanche, il sera nécessaire de charger une librairie à chaque fois que l’on redémarre <code>R</code>. Dans votre script, rédigez:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>) <span class="co"># Installation de la librairie sur la machine</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'tidyverse'</span>) <span class="co"># Chargement de la librairie dans la session</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>) <span class="co"># Installation de la librairie sur la machine</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'tidyverse'</span>) <span class="co"># Chargement de la librairie dans la session</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Pour exécuter ce code, cliquez sur <code>Run</code> en haut à droite dans le cadran 1. Ceci exécutera l’intégralité du code contenu dans votre script. Si vous souhaitez exécuter partiellement votre code, sélectionnez le morceau de code en question avec votre curseur et composez <code>CTRL + Enter</code>. Votre console devrait afficher:</p>
 <div class="cell">
 <div class="cell-output cell-output-stderr">
 <pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.2.0     ✔ readr     2.1.5
 ✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.5.2     ✔ tibble    3.3.1
-✔ lubridate 1.9.3     ✔ tidyr     1.3.1
-✔ purrr     1.0.2     
+✔ lubridate 1.9.3     ✔ tibble    3.3.1
+✔ readr     2.1.5     
 ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
+✖ readr::col_factor() masks scales::col_factor()
+✖ purrr::discard()    masks scales::discard()
+✖ dplyr::filter()     masks stats::filter()
+✖ stringr::fixed()    masks recipes::fixed()
+✖ dplyr::lag()        masks stats::lag()
+✖ readr::spec()       masks yardstick::spec()
 ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 </div>
 </div>
-<p>Il est désormais possible de recourir aux outils du <code>Tidyverse</code>. Le premier outil que nous allons voir est le <strong><em>pipe</em></strong> <code>%&gt;%</code>. Il permet d’alléger la rédaction de transformation de données ainsi que sa lecture.</p>
+<p>Il est désormais possible de recourir aux outils du <code>Tidyverse</code>. Le premier outil que nous allons voir est le <strong><em>pipe</em></strong> <code>%&gt;%</code>. Il permet d’alléger la rédaction de transformation de données ainsi que sa lecture. Formellement, les <code>%&gt;%</code> transforment <code>x %&gt;% f(y)</code> en <code>f(x,y)</code>.</p>
 <p>Grâce au pipe, il sera possible de lire et interpréter le fonctionnement d’un code de gauche à droite, en le combinant avec diverses fonctions. Reprenons l’exemple précédent dans lequel nous sélectionnions des modèles selon la condition <span class="math inline">\(wt&gt;3.4\)</span>. En base <code>R</code>, nous rédigions:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>mtcars[<span class="dv">5</span><span class="sc">:</span><span class="dv">9</span>,<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>)][<span class="fu">which</span>(mtcars[<span class="dv">5</span><span class="sc">:</span><span class="dv">9</span>,<span class="st">"wt"</span>]<span class="sc">&gt;</span><span class="fl">3.4</span>),]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>mtcars[<span class="dv">5</span><span class="sc">:</span><span class="dv">9</span>,<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>)][<span class="fu">which</span>(mtcars[<span class="dv">5</span><span class="sc">:</span><span class="dv">9</span>,<span class="st">"wt"</span>]<span class="sc">&gt;</span><span class="fl">3.4</span>),]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>Nous procédions à 3 opérations: <em>(i)</em> couper certaines rangées du <code>data.frame</code>, <em>(ii)</em> sélectionner 3 variables et <em>(iii)</em> filtrer conditionnellement les observations. Grâce aux outils du <code>tidyverse</code>, ceci peut être fait de la façon suivante:</p>
+<p>Nous procédions à 3 opérations: <em>(i)</em> couper certaines rangées du <code>data.frame</code>, <em>(ii)</em> sélectionner 3 variables et <em>(iii)</em> filtrer conditionnellement les observations. Grâce aux outils du <code>tidyverse</code>, ceci peut être fait, dans le même ordre, de la façon suivante:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span> <span class="fu">slice</span>(<span class="dv">5</span><span class="sc">:</span><span class="dv">9</span>) <span class="sc">%&gt;%</span> <span class="fu">select</span>(cyl,hp,wt) <span class="sc">%&gt;%</span> <span class="fu">filter</span>(wt<span class="sc">&gt;</span><span class="fl">3.4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span> <span class="fu">slice</span>(<span class="dv">5</span><span class="sc">:</span><span class="dv">9</span>) <span class="sc">%&gt;%</span> <span class="fu">select</span>(cyl,hp,wt) <span class="sc">%&gt;%</span> <span class="fu">filter</span>(wt<span class="sc">&gt;</span><span class="fl">3.4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                  cyl  hp   wt
 Hornet Sportabout   8 175 3.44
@@ -326,14 +421,1018 @@ Duster 360          8 245 3.57</code></pre>
 </div>
 </div>
 <p>Beaucoup plus lisible !</p>
-<p>#AJOUTER CHEATSHEET DPLYR</p>
+<p>Les sections suivantes ont pour objectif de présenter synthétiquement des fonctions utiles au traitement de données, après quoi nous verrons comment effectuer des régressions et visualiser nos données.</p>
+<section id="le-tidyverse-fonctions-essentielles" class="level2">
+<h2 class="anchored" data-anchor-id="le-tidyverse-fonctions-essentielles">Le Tidyverse : fonctions essentielles</h2>
+<section id="filter-filtrer-des-lignes" class="level3">
+<h3 class="anchored" data-anchor-id="filter-filtrer-des-lignes"><code>filter()</code> — Filtrer des lignes</h3>
+<p><code>filter()</code> conserve uniquement les lignes qui satisfont une condition logique.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Voitures avec plus de 6 cylindres et moins de 3 tonnes</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span> <span class="fu">filter</span>(cyl <span class="sc">&gt;</span> <span class="dv">6</span>, wt <span class="sc">&lt;</span> <span class="dv">3</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] mpg  cyl  disp hp   drat wt   qsec vs   am   gear carb
+&lt;0 rows&gt; (or 0-length row.names)</code></pre>
+</div>
+</div>
+</section>
+<section id="slice-sélectionner-des-lignes-par-position" class="level3">
+<h3 class="anchored" data-anchor-id="slice-sélectionner-des-lignes-par-position"><code>slice()</code> — Sélectionner des lignes par position</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Lignes 1 à 5</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span> <span class="fu">slice</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                   mpg cyl disp  hp drat    wt  qsec vs am gear carb
+Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2</code></pre>
+</div>
+</div>
+</section>
+<section id="select-sélectionner-des-colonnes" class="level3">
+<h3 class="anchored" data-anchor-id="select-sélectionner-des-colonnes"><code>select()</code> — Sélectionner des colonnes</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Garder uniquement le nombre de cylindres, la puissance et le poids</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>mtcars[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,] <span class="sc">%&gt;%</span> <span class="fu">select</span>(cyl, hp, wt) <span class="co"># N'affiche que les 5 premières observations</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                  cyl  hp    wt
+Mazda RX4           6 110 2.620
+Mazda RX4 Wag       6 110 2.875
+Datsun 710          4  93 2.320
+Hornet 4 Drive      6 110 3.215
+Hornet Sportabout   8 175 3.440</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Exclure une colonne avec le signe -</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>mtcars[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,] <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>qsec)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                   mpg cyl disp  hp drat    wt vs am gear carb
+Mazda RX4         21.0   6  160 110 3.90 2.620  0  1    4    4
+Mazda RX4 Wag     21.0   6  160 110 3.90 2.875  0  1    4    4
+Datsun 710        22.8   4  108  93 3.85 2.320  1  1    4    1
+Hornet 4 Drive    21.4   6  258 110 3.08 3.215  1  0    3    1
+Hornet Sportabout 18.7   8  360 175 3.15 3.440  0  0    3    2</code></pre>
+</div>
+</div>
+</section>
+<section id="rename-renommer-des-colonnes" class="level3">
+<h3 class="anchored" data-anchor-id="rename-renommer-des-colonnes"><code>rename()</code> — Renommer des colonnes</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Syntaxe : rename(nouveau_nom = ancien_nom)</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>mtcars[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,]  <span class="sc">%&gt;%</span> <span class="fu">rename</span>(<span class="at">poids =</span> wt, <span class="at">puissance =</span> hp)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                   mpg cyl disp puissance drat poids  qsec vs am gear carb
+Mazda RX4         21.0   6  160       110 3.90 2.620 16.46  0  1    4    4
+Mazda RX4 Wag     21.0   6  160       110 3.90 2.875 17.02  0  1    4    4
+Datsun 710        22.8   4  108        93 3.85 2.320 18.61  1  1    4    1
+Hornet 4 Drive    21.4   6  258       110 3.08 3.215 19.44  1  0    3    1
+Hornet Sportabout 18.7   8  360       175 3.15 3.440 17.02  0  0    3    2</code></pre>
+</div>
+</div>
+</section>
+<section id="mutate-créer-ou-transformer-des-colonnes" class="level3">
+<h3 class="anchored" data-anchor-id="mutate-créer-ou-transformer-des-colonnes"><code>mutate()</code> — Créer ou transformer des colonnes</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convertir le poids de milliers de livres en kilogrammes</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="co"># La syntaxe de mutate est : data.frame %&gt;%  mutate(NouvelleVariable= transformation de variables))</span></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>mtcars[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,]  <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">poids_kg =</span> wt <span class="sc">*</span> <span class="fl">453.6</span>) <span class="sc">%&gt;%</span> <span class="fu">select</span>(wt, poids_kg)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                     wt poids_kg
+Mazda RX4         2.620 1188.432
+Mazda RX4 Wag     2.875 1304.100
+Datsun 710        2.320 1052.352
+Hornet 4 Drive    3.215 1458.324
+Hornet Sportabout 3.440 1560.384</code></pre>
+</div>
+</div>
+</section>
+<section id="group_by-et-summarise-agréger-par-groupe" class="level3">
+<h3 class="anchored" data-anchor-id="group_by-et-summarise-agréger-par-groupe"><code>group_by()</code> et <code>summarise()</code> — Agréger par groupe</h3>
+<p><code>group_by()</code> seul ne modifie pas les données visuellement, mais il indique à R d’effectuer les opérations suivantes <strong>par groupe</strong>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Consommation moyenne et puissance moyenne selon le nombre de cylindres</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span></span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(cyl) <span class="sc">%&gt;%</span></span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mpg_moyen  =</span> <span class="fu">mean</span>(mpg),<span class="at">hp_moyen   =</span> <span class="fu">mean</span>(hp),</span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_voitures =</span> <span class="fu">n</span>()</span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 4
+    cyl mpg_moyen hp_moyen n_voitures
+  &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;      &lt;int&gt;
+1     4      26.7     82.6         11
+2     6      19.7    122.           7
+3     8      15.1    209.          14</code></pre>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="régression-linéaire-avec-lm" class="level2">
+<h2 class="anchored" data-anchor-id="régression-linéaire-avec-lm">Régression linéaire avec <code>lm()</code></h2>
+<section id="rappel-théorique" class="level3">
+<h3 class="anchored" data-anchor-id="rappel-théorique">Rappel théorique</h3>
+<p>Une régression OLS (<em>Ordinary Least Squares</em>) modélise la relation entre une variable dépendante <span class="math inline">\(y\)</span> et des variables explicatives <span class="math inline">\(X\)</span> :</p>
+<p><span class="math display">\[y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \cdots + \beta_k x_k + \varepsilon\]</span></p>
+<p>On cherche les coefficients <span class="math inline">\(\hat{\beta}\)</span> qui <strong>minimisent la somme des carrés des résidus</strong> :</p>
+<p><span class="math display">\[\hat{\beta} = \underset{\beta}{\arg\min} \sum_{i=1}^{n}(y_i - \hat{y}_i)^2\]</span> et obtenir</p>
+<p><span class="math display">\[\hat{y} = \hat{\beta}_0 + \hat{\beta}_1 x_1 + \hat{\beta}_2 x_2 + \cdots + \hat{\beta}_k x_k \]</span></p>
+<p>##Ajuster un modèle avec <code>lm()</code></p>
+<p>Il existe une fonction en <code>R</code> qui permet de calculer ces coefficients, la fonction <code>lm()</code> (pour <em>linear model</em>). Appliquons cette fonction à la base de données de téléphones discutées en séance d’introduction. Celle-ci était constituée de 28 observations et des variables suivantes :</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "Produit"              "price"                "Qualité de la caméra"
+ [4] "Année d'introduction" "Marque"               "Garantie"            
+ [7] "Poids"                "Couleur"              "Processeur"          
+[10] "Densité de pixels"    "RAM"                  "stockage"            
+[13] "megapixels"           "age"                  "meanprice"           </code></pre>
+</div>
+</div>
+<p>La syntaxe de base est <code>lm(y ~ x1 + x2, data = ...)</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Modèle : consommation (mpg) ~ poids (wt) + puissance (hp)</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>modele <span class="ot">&lt;-</span> <span class="fu">lm</span>(price<span class="sc">~</span> Poids <span class="sc">+</span> megapixels <span class="sc">+</span> <span class="fu">factor</span>(age) <span class="sc">+</span> RAM <span class="sc">+</span> </span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>         stockage <span class="sc">+</span> (<span class="st">`</span><span class="at">Qualité de la caméra</span><span class="st">`</span>)<span class="sc">+</span>(Marque),</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">data =</span> phonesdf)</span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modele)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = price ~ Poids + megapixels + factor(age) + RAM + 
+    stockage + (`Qualité de la caméra`) + (Marque), data = phonesdf)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-135.255  -26.741    2.758   34.611   80.695 
+
+Coefficients:
+                                 Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)                     -577.9407   205.2751  -2.815   0.0124 *  
+Poids                              4.6105     0.8158   5.652 3.61e-05 ***
+megapixels                        -0.5183     0.7165  -0.723   0.4799    
+factor(age)3                      17.6237    69.5645   0.253   0.8032    
+RAM                               45.4237    18.3874   2.470   0.0251 *  
+stockage                           1.0326     0.1340   7.705 9.00e-07 ***
+`Qualité de la caméra`Excellent  187.4955    99.3178   1.888   0.0773 .  
+`Qualité de la caméra`Très bien   81.9924    51.7328   1.585   0.1325    
+MarqueCoolblue refurbished      -114.3070    98.6721  -1.158   0.2637    
+MarqueGoogle                    -595.6554    65.6759  -9.070 1.05e-07 ***
+MarqueOnePlus                   -787.6064    58.5518 -13.451 3.87e-10 ***
+MarqueSamsung                   -519.6706    37.2459 -13.952 2.25e-10 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 60.41 on 16 degrees of freedom
+Multiple R-squared:  0.9911,    Adjusted R-squared:  0.985 
+F-statistic: 162.4 on 11 and 16 DF,  p-value: 3.022e-14</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><strong>Lecture des résultats :</strong></p>
+<ul>
+<li><strong>Estimate</strong> : valeur de <span class="math inline">\(\hat{\beta}\)</span> pour chaque prédicteur</li>
+<li><strong>Pr(&gt;|t|)</strong> : p-valeur — un astérisque <code>*</code> indique une significativité à 5 %</li>
+<li><strong>R²</strong> : part de variance de <span class="math inline">\(y\)</span> expliquée par le modèle</li>
+</ul>
+</blockquote>
+</section>
+<section id="accéder-aux-résultats-programmatiquement" class="level3">
+<h3 class="anchored" data-anchor-id="accéder-aux-résultats-programmatiquement">Accéder aux résultats programmatiquement</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Coefficients</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Intervalles de confiance</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Valeurs prédites</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">coef</span>(modele)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                    (Intercept)                           Poids 
+                    -577.940655                        4.610544 
+                     megapixels                    factor(age)3 
+                      -0.518293                       17.623707 
+                            RAM                        stockage 
+                      45.423687                        1.032591 
+`Qualité de la caméra`Excellent `Qualité de la caméra`Très bien 
+                     187.495546                       81.992351 
+     MarqueCoolblue refurbished                    MarqueGoogle 
+                    -114.307031                     -595.655406 
+                  MarqueOnePlus                   MarqueSamsung 
+                    -787.606439                     -519.670553 </code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">confint</span>(modele)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                       2.5 %      97.5 %
+(Intercept)                     -1013.104524 -142.776785
+Poids                               2.881121    6.339966
+megapixels                         -2.037236    1.000650
+factor(age)3                     -129.846376  165.093790
+RAM                                 6.444133   84.403241
+stockage                            0.748476    1.316707
+`Qualité de la caméra`Excellent   -23.048869  398.039962
+`Qualité de la caméra`Très bien   -27.676261  191.660963
+MarqueCoolblue refurbished       -323.482562   94.868501
+MarqueGoogle                     -734.882024 -456.428788
+MarqueOnePlus                    -911.730655 -663.482222
+MarqueSamsung                    -598.628372 -440.712734</code></pre>
+</div>
+</div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fitted</span>(modele)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        1         2         3         4         5         6         7         8 
+1334.6554 1334.6554  362.3048 1459.1401  555.2335  362.3048 1459.1401  739.0000 
+        9        10        11        12        13        14        15        16 
+1459.1401  689.9141  922.9728 1399.0000  262.2363  494.4765 1334.6554 1598.9988 
+       17        18        19        20        21        22        23        24 
+ 485.2554  494.4765  922.9728  662.7033 1723.4835 1723.4835  203.2967  884.6489 
+       25        26        27        28 
+1042.7665 1598.9988  822.0859 1569.0000 </code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="exporter-ses-résultats-de-régression-avec-gtsummary" class="level2">
+<h2 class="anchored" data-anchor-id="exporter-ses-résultats-de-régression-avec-gtsummary">Exporter ses résultats de régression avec <code>gtsummary</code></h2>
+<p>Présenter les résultats d’une régression dans un rapport nécessite un tableau lisible et formaté. La librairie <code>gtsummary</code> permet de produire automatiquement des tableaux de régression, exportables en Word.</p>
+<p>Installez et chargez les librairies nécessaires :</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"gtsummary"</span>)</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"flextable"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gtsummary)</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(flextable)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<section id="construire-le-tableau-de-régression" class="level3">
+<h3 class="anchored" data-anchor-id="construire-le-tableau-de-régression">Construire le tableau de régression</h3>
+<p><code>tbl_regression()</code> prend en entrée un objet <code>lm()</code> et produit automatiquement un tableau mis en forme avec les coefficients, intervalles de confiance et p-valeurs.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># On suppose que le modèle a déjà été estimé :</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="co"># preg &lt;- lm(y ~ x1 + x2, data = mes_données)</span></span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>tbl <span class="ot">&lt;-</span> <span class="fu">tbl_regression</span>(modele, <span class="at">intercept =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>tbl</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="teumgzxyva" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#teumgzxyva table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#teumgzxyva thead, #teumgzxyva tbody, #teumgzxyva tfoot, #teumgzxyva tr, #teumgzxyva td, #teumgzxyva th {
+  border-style: none;
+}
+
+#teumgzxyva p {
+  margin: 0;
+  padding: 0;
+}
+
+#teumgzxyva .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#teumgzxyva .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#teumgzxyva .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#teumgzxyva .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#teumgzxyva .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#teumgzxyva .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#teumgzxyva .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#teumgzxyva .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#teumgzxyva .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#teumgzxyva .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#teumgzxyva .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#teumgzxyva .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#teumgzxyva .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#teumgzxyva .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#teumgzxyva .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#teumgzxyva .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#teumgzxyva .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#teumgzxyva .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#teumgzxyva .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#teumgzxyva .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#teumgzxyva .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#teumgzxyva .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#teumgzxyva .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#teumgzxyva .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#teumgzxyva .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#teumgzxyva .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#teumgzxyva .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#teumgzxyva .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#teumgzxyva .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#teumgzxyva .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#teumgzxyva .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#teumgzxyva .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#teumgzxyva .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#teumgzxyva .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#teumgzxyva .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#teumgzxyva .gt_left {
+  text-align: left;
+}
+
+#teumgzxyva .gt_center {
+  text-align: center;
+}
+
+#teumgzxyva .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#teumgzxyva .gt_font_normal {
+  font-weight: normal;
+}
+
+#teumgzxyva .gt_font_bold {
+  font-weight: bold;
+}
+
+#teumgzxyva .gt_font_italic {
+  font-style: italic;
+}
+
+#teumgzxyva .gt_super {
+  font-size: 65%;
+}
+
+#teumgzxyva .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#teumgzxyva .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#teumgzxyva .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#teumgzxyva .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#teumgzxyva .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#teumgzxyva .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#teumgzxyva .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#teumgzxyva .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#teumgzxyva div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="gt_col_headings header">
+<th id="label" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
+<th id="estimate" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>Beta</strong></th>
+<th id="conf.low" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>95% CI</strong></th>
+<th id="p.value" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>p-value</strong></th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">(Intercept)</td>
+<td class="gt_row gt_center" headers="estimate">-578</td>
+<td class="gt_row gt_center" headers="conf.low">-1,013, -143</td>
+<td class="gt_row gt_center" headers="p.value">0.012</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">Poids</td>
+<td class="gt_row gt_center" headers="estimate">4.6</td>
+<td class="gt_row gt_center" headers="conf.low">2.9, 6.3</td>
+<td class="gt_row gt_center" headers="p.value">&lt;0.001</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">megapixels</td>
+<td class="gt_row gt_center" headers="estimate">-0.52</td>
+<td class="gt_row gt_center" headers="conf.low">-2.0, 1.0</td>
+<td class="gt_row gt_center" headers="p.value">0.5</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">factor(age)</td>
+<td class="gt_row gt_center" headers="estimate"><br>
+</td>
+<td class="gt_row gt_center" headers="conf.low"><br>
+</td>
+<td class="gt_row gt_center" headers="p.value"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;1</td>
+<td class="gt_row gt_center" headers="estimate">—</td>
+<td class="gt_row gt_center" headers="conf.low">—</td>
+<td class="gt_row gt_center" headers="p.value"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;3</td>
+<td class="gt_row gt_center" headers="estimate">18</td>
+<td class="gt_row gt_center" headers="conf.low">-130, 165</td>
+<td class="gt_row gt_center" headers="p.value">0.8</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">RAM</td>
+<td class="gt_row gt_center" headers="estimate">45</td>
+<td class="gt_row gt_center" headers="conf.low">6.4, 84</td>
+<td class="gt_row gt_center" headers="p.value">0.025</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">stockage</td>
+<td class="gt_row gt_center" headers="estimate">1.0</td>
+<td class="gt_row gt_center" headers="conf.low">0.75, 1.3</td>
+<td class="gt_row gt_center" headers="p.value">&lt;0.001</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Qualité de la caméra</td>
+<td class="gt_row gt_center" headers="estimate"><br>
+</td>
+<td class="gt_row gt_center" headers="conf.low"><br>
+</td>
+<td class="gt_row gt_center" headers="p.value"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Bon</td>
+<td class="gt_row gt_center" headers="estimate">—</td>
+<td class="gt_row gt_center" headers="conf.low">—</td>
+<td class="gt_row gt_center" headers="p.value"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Excellent</td>
+<td class="gt_row gt_center" headers="estimate">187</td>
+<td class="gt_row gt_center" headers="conf.low">-23, 398</td>
+<td class="gt_row gt_center" headers="p.value">0.077</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Très bien</td>
+<td class="gt_row gt_center" headers="estimate">82</td>
+<td class="gt_row gt_center" headers="conf.low">-28, 192</td>
+<td class="gt_row gt_center" headers="p.value">0.13</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Marque</td>
+<td class="gt_row gt_center" headers="estimate"><br>
+</td>
+<td class="gt_row gt_center" headers="conf.low"><br>
+</td>
+<td class="gt_row gt_center" headers="p.value"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Apple</td>
+<td class="gt_row gt_center" headers="estimate">—</td>
+<td class="gt_row gt_center" headers="conf.low">—</td>
+<td class="gt_row gt_center" headers="p.value"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Coolblue refurbished</td>
+<td class="gt_row gt_center" headers="estimate">-114</td>
+<td class="gt_row gt_center" headers="conf.low">-323, 95</td>
+<td class="gt_row gt_center" headers="p.value">0.3</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Google</td>
+<td class="gt_row gt_center" headers="estimate">-596</td>
+<td class="gt_row gt_center" headers="conf.low">-735, -456</td>
+<td class="gt_row gt_center" headers="p.value">&lt;0.001</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;OnePlus</td>
+<td class="gt_row gt_center" headers="estimate">-788</td>
+<td class="gt_row gt_center" headers="conf.low">-912, -663</td>
+<td class="gt_row gt_center" headers="p.value">&lt;0.001</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Samsung</td>
+<td class="gt_row gt_center" headers="estimate">-520</td>
+<td class="gt_row gt_center" headers="conf.low">-599, -441</td>
+<td class="gt_row gt_center" headers="p.value">&lt;0.001</td>
+</tr>
+</tbody><tfoot class="gt_sourcenotes">
+<tr class="odd">
+<td colspan="4" class="gt_sourcenote">Abbreviation: CI = Confidence Interval</td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><strong>Note :</strong> l’argument <code>intercept = TRUE</code> force l’affichage de la constante <span class="math inline">\(\hat{\beta}_0\)</span>, qui est masquée par défaut.</p>
+</blockquote>
+</section>
+<section id="exporter-le-tableau-en-word" class="level3">
+<h3 class="anchored" data-anchor-id="exporter-le-tableau-en-word">Exporter le tableau en Word</h3>
+<p>Une fois le tableau construit, on le convertit en objet <code>flextable</code> puis on l’exporte directement en fichier <code>.docx</code> :</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>gt <span class="ot">&lt;-</span> <span class="fu">as_flex_table</span>(tbl)              <span class="co"># Conversion en flextable</span></span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>flextable<span class="sc">::</span><span class="fu">save_as_docx</span>(gt, <span class="at">path =</span> <span class="st">"reg_table.docx"</span>)  <span class="co"># Export en Word</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Le fichier <code>reg_table.docx</code> apparaît dans le dossier de votre projet et peut être directement intégré à un rapport.</p>
+</section>
+</section>
+<section id="visualisation-avec-ggplot2" class="level2">
+<h2 class="anchored" data-anchor-id="visualisation-avec-ggplot2">Visualisation avec <code>ggplot2</code></h2>
+<p><code>ggplot2</code> repose sur une <strong>grammaire des graphiques</strong> : on empile des couches (<em>layers</em>) avec <code>+</code>.</p>
+<pre><code>ggplot(data, aes(x = ..., y = ...)) +   # données et axes
+  geom_*() +                             # type de graphique
+  labs() +                               # titres et étiquettes
+  theme_*()                              # style visuel</code></pre>
+<section id="nuage-de-points-avec-droite-de-régression" class="level3">
+<h3 class="anchored" data-anchor-id="nuage-de-points-avec-droite-de-régression">Nuage de points avec droite de régression</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span></span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> wt, <span class="at">y =</span> mpg, <span class="at">color =</span> <span class="fu">factor</span>(cyl))) <span class="sc">+</span></span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">"grey40"</span>) <span class="sc">+</span></span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title  =</span> <span class="st">"Consommation en fonction du poids"</span>,</span>
+<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x      =</span> <span class="st">"Poids (x1000 lbs)"</span>,</span>
+<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y      =</span> <span class="st">"Miles par gallon"</span>,</span>
+<span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">color  =</span> <span class="st">"Cylindres"</span></span>
+<span id="cb56-10"><a href="#cb56-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb56-11"><a href="#cb56-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="intro_R_files/figure-html/unnamed-chunk-23-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="boîtes-à-moustaches-boxplot" class="level3">
+<h3 class="anchored" data-anchor-id="boîtes-à-moustaches-boxplot">Boîtes à moustaches (<em>boxplot</em>)</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">cyl =</span> <span class="fu">factor</span>(cyl)) <span class="sc">%&gt;%</span></span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> cyl, <span class="at">y =</span> mpg, <span class="at">fill =</span> cyl)) <span class="sc">+</span></span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Distribution de la consommation par nombre de cylindres"</span>,</span>
+<span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x     =</span> <span class="st">"Nombre de cylindres"</span>,</span>
+<span id="cb57-8"><a href="#cb57-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y     =</span> <span class="st">"Miles par gallon"</span></span>
+<span id="cb57-9"><a href="#cb57-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb57-10"><a href="#cb57-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb57-11"><a href="#cb57-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="intro_R_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="histogramme" class="level3">
+<h3 class="anchored" data-anchor-id="histogramme">Histogramme</h3>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span></span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> mpg)) <span class="sc">+</span></span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">3</span>, <span class="at">fill =</span> <span class="st">"steelblue"</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Distribution de la consommation"</span>,</span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x     =</span> <span class="st">"Miles par gallon"</span>,</span>
+<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y     =</span> <span class="st">"Fréquence"</span></span>
+<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb58-9"><a href="#cb58-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="intro_R_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="combiner-ggplot2-et-dplyr" class="level3">
+<h3 class="anchored" data-anchor-id="combiner-ggplot2-et-dplyr">Combiner <code>ggplot2</code> et <code>dplyr</code></h3>
+<p>On peut passer directement un tableau transformé à <code>ggplot2</code> via le pipe :</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>mtcars <span class="sc">%&gt;%</span></span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(cyl) <span class="sc">%&gt;%</span></span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mpg_moyen =</span> <span class="fu">mean</span>(mpg)) <span class="sc">%&gt;%</span></span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">cyl =</span> <span class="fu">factor</span>(cyl)) <span class="sc">%&gt;%</span></span>
+<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> cyl, <span class="at">y =</span> mpg_moyen, <span class="at">fill =</span> cyl)) <span class="sc">+</span></span>
+<span id="cb59-6"><a href="#cb59-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">width =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb59-7"><a href="#cb59-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb59-8"><a href="#cb59-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Consommation moyenne par nombre de cylindres"</span>,</span>
+<span id="cb59-9"><a href="#cb59-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">x     =</span> <span class="st">"Cylindres"</span>,</span>
+<span id="cb59-10"><a href="#cb59-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">y     =</span> <span class="st">"MPG moyen"</span></span>
+<span id="cb59-11"><a href="#cb59-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb59-12"><a href="#cb59-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb59-13"><a href="#cb59-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="intro_R_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Enfin, nous pouvons représenter les résultats de notre régression hédonique sur les prix de smartphones avec <code>ggplot</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"tidymodels"</span>) <span class="co">#libraire utile pour transformer nos tables de régressions en data.frame</span></span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tidy</span>(modele)<span class="sc">%&gt;%</span></span>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a><span class="co"># tidy transforme l'objet modele qui est un format lm en data.frame, interprétable par ggplot.</span></span>
+<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">term =</span> <span class="fu">reorder</span>(term, estimate),</span>
+<span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">conf.low  =</span> estimate <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> std.error,</span>
+<span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">conf.high =</span> estimate <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> std.error) <span class="sc">%&gt;%</span></span>
+<span id="cb60-8"><a href="#cb60-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> estimate, <span class="at">y =</span> term)) <span class="sc">+</span></span>
+<span id="cb60-9"><a href="#cb60-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">color =</span> <span class="st">"grey50"</span>) <span class="sc">+</span></span>
+<span id="cb60-10"><a href="#cb60-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_errorbarh</span>(<span class="fu">aes</span>(<span class="at">xmin =</span> conf.low, <span class="at">xmax =</span> conf.high),</span>
+<span id="cb60-11"><a href="#cb60-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">height =</span> <span class="fl">0.2</span>,</span>
+<span id="cb60-12"><a href="#cb60-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"grey40"</span>) <span class="sc">+</span></span>
+<span id="cb60-13"><a href="#cb60-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">3</span>, <span class="at">color =</span> <span class="st">"#0072B2"</span>) <span class="sc">+</span></span>
+<span id="cb60-14"><a href="#cb60-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Coefficient estimate"</span>,</span>
+<span id="cb60-15"><a href="#cb60-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="cn">NULL</span>,</span>
+<span id="cb60-16"><a href="#cb60-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Coefficient plot with 95% confidence intervals"</span>) <span class="sc">+</span></span>
+<span id="cb60-17"><a href="#cb60-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">13</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="intro_R_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+    tabsets.forEach(function(tabset) {
+      const tabby = new Tabby('#' + tabset.id);
+    });
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
