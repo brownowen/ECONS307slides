@@ -52,15 +52,15 @@ de réaliser des tâches complexes. Avant de discuter l'utilisation des
 librairies en `R`, nous allons présenter l'environnement dans lequel
 nous utiliserons `R`.
 
-# Rstudio
+# RStudio
 
 L'environnement de développement le plus populaire pour `R` est
-**Rstudio**. Tout comme son langage, **Rstudio** est un logiciel libre
-et gratuit. Tel que représenté ci-dessous, **Rstudio** affiche 4
+**RStudio**. Tout comme son langage, **RStudio** est un logiciel libre
+et gratuit. Tel que représenté ci-dessous, **RStudio** affiche 4
 cadrans.
 
 ![Environnement de programmation
-Rstudio](/images/Rstudio_screenshot.png)
+RStudio](/images/RStudio_screenshot.png)
 
 1.  Le cadran 1 est l'espace du script. C'est là que l'on rédige son
     code.
@@ -85,12 +85,12 @@ Rstudio](/images/Rstudio_screenshot.png)
 4.  Le cadran 4 est l'espace de console. C'est là qu'est interprété le
     code et que `R` affiche les résultats de ses calculs.
 
-## Créer un espace de travail sur **Rstudio**
+## Créer un espace de travail sur **RStudio**
 
 Lorsqu'un projet est entamé, il est de bon usage de créer un *projet*
 `R`. Un projet est un espace dans l'ordinateur où se trouve tout le
 matériel relatif à un projet. Lorsqu'un projet est construit, il est
-possible sauvegarder son avancée, de fermer **Rstudio** et de reprendre
+possible sauvegarder son avancée, de fermer **RStudio** et de reprendre
 ultérieurement son travail où il a été laissé. À la réouverture d'un
 projet, l'environnement de travail affiche automatiquement les scripts,
 les `data.frame` et le dossier dans lequel se trouve le matériel au sein
@@ -99,7 +99,7 @@ du disque dur de l'ordinateur.
 1.  **Créer un projet**: en haut à gauche, sélectionnez
     `File > New project` en veillant à choisir pertinemment le nom et
     l'emplacement dans votre ordinateur (pas dans un fichier appartenant
-    à un cloud par exemple). Lorsque le dossier du projet **Rstudio**
+    à un cloud par exemple). Lorsque le dossier du projet **RStudio**
     est créé, vous pouvez ajouter votre base de données dans ce
     dossier.\
 2.  **Créer un script**: en haut à gauche, sélectionnez
@@ -112,7 +112,7 @@ sur `R`: vous devrez installer des "boîtes à outils" que sont les
 *librairies*. La prochaine section discute l'usage des librairies, après
 quoi nous passerons à l'analyse de données et la visualisation de données.
 
-Afin de vous entraîner, il est suggéré de lancer *Rstudio* et d'exécuter
+Afin de vous entraîner, il est suggéré de lancer *RStudio* et d'exécuter
 les codes `R` sur votre machine en même temps que vous parcourez ce
 tutoriel, afin de vous familiariser avec le langage.
 
@@ -494,6 +494,6 @@ tidy(modele)%>%
   theme_minimal(base_size = 13)
 ```
 
-**Rstudio** produira dans le cadran 3 un graphique. Il est possible
+**RStudio** produira dans le cadran 3 un graphique. Il est possible
 d'exporter cette image sous fichier `.png` et de l'enregistrer afin de
 l'inclure dans un document de traitement de texte.
