@@ -8,6 +8,7 @@ toc-depth: 4
 tabsets: true
 author: Owen Brown, Université Libre de Bruxelles 
 author-meta: Owen BROWN (ULB)
+theme: pulse
 ---
 
 ```{r,echo=FALSE,message=FALSE,warning=FALSE}
@@ -110,7 +111,8 @@ analyser vos données. Pour ce faire, vous emploierez une diversité
 d'outils. Néanmoins, tous les outils ne sont pas disponibles par défaut
 sur `R`: vous devrez installer des "boîtes à outils" que sont les
 *librairies*. La prochaine section discute l'usage des librairies, après
-quoi nous passerons à l'analyse de données et la visualisation de données.
+quoi nous passerons à l'analyse de données et la visualisation de
+données.
 
 Afin de vous entraîner, il est suggéré de lancer *RStudio* et d'exécuter
 les codes `R` sur votre machine en même temps que vous parcourez ce
@@ -157,8 +159,7 @@ est une librairie qui permet, entre autre, d'interagir beaucoup plus
 simplement avec des `data.frame`. Utiliser une librairie nécessite deux
 étapes:
 
-> **1.  Installer la librairie**
-> **2.  Charger la librairie**
+> **1. Installer la librairie** **2. Charger la librairie**
 
 Il ne faut installer la librairie qu'une seule fois sur sa machine. En
 revanche, il sera nécessaire de charger une librairie à chaque fois que
@@ -170,10 +171,11 @@ install.packages("tidyverse") # Installation de la librairie sur la machine
 library('tidyverse') # Chargement de la librairie dans la session
 ```
 
-Pour exécuter ce code, cliquez sur `Run` en haut à droite du cadran 1. Ceci exécutera l'intégralité du code contenu dans votre
-script. Si vous souhaitez exécuter partiellement votre code,
-sélectionnez le morceau de code en question avec votre curseur et
-composez `CTRL + Enter`. Votre console devrait afficher:
+Pour exécuter ce code, cliquez sur `Run` en haut à droite du cadran 1.
+Ceci exécutera l'intégralité du code contenu dans votre script. Si vous
+souhaitez exécuter partiellement votre code, sélectionnez le morceau de
+code en question avec votre curseur et composez `CTRL + Enter`. Votre
+console devrait afficher:
 
 ```{r,warning=FALSE,message=TRUE, echo=FALSE}
 library('tidyverse') # Chargement de la librairie dans la session
@@ -184,10 +186,10 @@ premier outil que nous allons voir est le ***pipe*** `%>%`. Il permet
 d'alléger la rédaction de transformation de données ainsi que sa
 lecture. Formellement, les `%>%` transforment `x %>% f(y)` en `f(x,y)`.
 
-Grâce au *pipe*, il sera possible de lire et interpréter le fonctionnement
-d'un code de gauche à droite, en le combinant à diverses fonctions.
-Reprenons l'exemple précédent dans lequel nous sélectionnions des
-modèles selon la condition $wt>3.4$. En base `R`, nous rédigions:
+Grâce au *pipe*, il sera possible de lire et interpréter le
+fonctionnement d'un code de gauche à droite, en le combinant à diverses
+fonctions. Reprenons l'exemple précédent dans lequel nous sélectionnions
+des modèles selon la condition $wt>3.4$. En base `R`, nous rédigions:
 
 ```{r,eval=FALSE}
 mtcars[5:9,c(2,4,6)][which(mtcars[5:9,"wt"]>3.4),]

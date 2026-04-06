@@ -1,0 +1,24 @@
+---
+title: "Divers"
+format: html
+theme: pulse
+title-block-banner: true
+description: "\n Sans pour autant être une liste de points à cocher, vous trouverez ici un ensemble de conseils, de remarques ou de questions que vous pourriez vous poser durant la rédaction de votre travail afin de l'améliorer. Ces remarques peuvent tant porter sur le fond que sur la forme."
+  
+---
+
+Sans pour autant être une liste de points à cocher, vous trouverez ici un ensemble de conseils, de remarques ou de questions que vous pourriez vous poser durant la rédaction de votre travail afin de l'améliorer. Ces remarques peuvent tant porter sur le fond que sur la forme.
+
+```{r,echo=FALSE,results=FALSE,message=FALSE,warning=FALSE}
+source("../lib.R")
+```
+
+### Structure du travail ###
+
+  1. **Introduction** Votre introduction est une description brève de votre travail. Elle doit répondre en surface aux questions suivantes:
+  
+  
+          
+          
+          
+          

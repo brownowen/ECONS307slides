@@ -77,7 +77,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-1d4f84655f446305ac42a8f1abcf7405.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-9b9b5ea2a8a1c882cd04d8a304f74db5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -148,7 +148,7 @@ window.Quarto = {
     <a href="../index.html" class="navbar-brand navbar-brand-logo">
     </a>
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">ECONS-307</span>
+    <span class="navbar-title"><strong>ECONS-307</strong></span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -182,9 +182,9 @@ window.Quarto = {
    
   <ul>
   <li><a href="#un-langage-de-programmation" id="toc-un-langage-de-programmation" class="nav-link active" data-scroll-target="#un-langage-de-programmation">Un langage de programmation</a></li>
-  <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio">Rstudio</a>
+  <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio">RStudio</a>
   <ul>
-  <li><a href="#créer-un-espace-de-travail-sur-rstudio" id="toc-créer-un-espace-de-travail-sur-rstudio" class="nav-link" data-scroll-target="#créer-un-espace-de-travail-sur-rstudio">Créer un espace de travail sur <strong>Rstudio</strong></a></li>
+  <li><a href="#créer-un-espace-de-travail-sur-rstudio" id="toc-créer-un-espace-de-travail-sur-rstudio" class="nav-link" data-scroll-target="#créer-un-espace-de-travail-sur-rstudio">Créer un espace de travail sur <strong>RStudio</strong></a></li>
   </ul></li>
   <li><a href="#une-librairie" id="toc-une-librairie" class="nav-link" data-scroll-target="#une-librairie">Une librairie</a>
   <ul>
@@ -263,12 +263,12 @@ window.Quarto = {
 <p>Ces contributions sont faites sous forme de librairies : des fonctions pré-faites qui permettent <em>(i)</em> de simplifier l’usage de <code>R</code> et <em>(ii)</em> de réaliser des tâches complexes. Avant de discuter l’utilisation des librairies en <code>R</code>, nous allons présenter l’environnement dans lequel nous utiliserons <code>R</code>.</p>
 </section>
 <section id="rstudio" class="level1">
-<h1>Rstudio</h1>
-<p>L’environnement de développement le plus populaire pour <code>R</code> est <strong>Rstudio</strong>. Tout comme son langage, <strong>Rstudio</strong> est un logiciel libre et gratuit. Tel que représenté ci-dessous, <strong>Rstudio</strong> affiche 4 cadrans.</p>
+<h1>RStudio</h1>
+<p>L’environnement de développement le plus populaire pour <code>R</code> est <strong>RStudio</strong>. Tout comme son langage, <strong>RStudio</strong> est un logiciel libre et gratuit. Tel que représenté ci-dessous, <strong>RStudio</strong> affiche 4 cadrans.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="..\images/Rstudio_screenshot.png" class="img-fluid figure-img"></p>
-<figcaption>Environnement de programmation Rstudio</figcaption>
+<p><img src="..\images/RStudio_screenshot.png" class="img-fluid figure-img"></p>
+<figcaption>Environnement de programmation RStudio</figcaption>
 </figure>
 </div>
 <ol type="1">
@@ -284,15 +284,15 @@ window.Quarto = {
 <li><p>Le cadran 4 est l’espace de console. C’est là qu’est interprété le code et que <code>R</code> affiche les résultats de ses calculs.</p></li>
 </ol>
 <section id="créer-un-espace-de-travail-sur-rstudio" class="level2">
-<h2 class="anchored" data-anchor-id="créer-un-espace-de-travail-sur-rstudio">Créer un espace de travail sur <strong>Rstudio</strong></h2>
-<p>Lorsqu’un projet est entamé, il est de bon usage de créer un <em>projet</em> <code>R</code>. Un projet est un espace dans l’ordinateur où se trouve tout le matériel relatif à un projet. Lorsqu’un projet est construit, il est possible sauvegarder son avancée, de fermer <strong>Rstudio</strong> et de reprendre ultérieurement son travail où il a été laissé. À la réouverture d’un projet, l’environnement de travail affiche automatiquement les scripts, les <code>data.frame</code> et le dossier dans lequel se trouve le matériel au sein du disque dur de l’ordinateur.</p>
+<h2 class="anchored" data-anchor-id="créer-un-espace-de-travail-sur-rstudio">Créer un espace de travail sur <strong>RStudio</strong></h2>
+<p>Lorsqu’un projet est entamé, il est de bon usage de créer un <em>projet</em> <code>R</code>. Un projet est un espace dans l’ordinateur où se trouve tout le matériel relatif à un projet. Lorsqu’un projet est construit, il est possible sauvegarder son avancée, de fermer <strong>RStudio</strong> et de reprendre ultérieurement son travail où il a été laissé. À la réouverture d’un projet, l’environnement de travail affiche automatiquement les scripts, les <code>data.frame</code> et le dossier dans lequel se trouve le matériel au sein du disque dur de l’ordinateur.</p>
 <ol type="1">
-<li><strong>Créer un projet</strong>: en haut à gauche, sélectionnez <code>File &gt; New project</code> en veillant à choisir pertinemment le nom et l’emplacement dans votre ordinateur (pas dans un fichier appartenant à un cloud par exemple). Lorsque le dossier du projet <strong>Rstudio</strong> est créé, vous pouvez ajouter votre base de données dans ce dossier.<br>
+<li><strong>Créer un projet</strong>: en haut à gauche, sélectionnez <code>File &gt; New project</code> en veillant à choisir pertinemment le nom et l’emplacement dans votre ordinateur (pas dans un fichier appartenant à un cloud par exemple). Lorsque le dossier du projet <strong>RStudio</strong> est créé, vous pouvez ajouter votre base de données dans ce dossier.<br>
 </li>
 <li><strong>Créer un script</strong>: en haut à gauche, sélectionnez <code>File &gt; New file &gt; R script</code>.</li>
 </ol>
 <p>Désormais, vous disposez d’un espace de travail dans lequel vous pourrez analyser vos données. Pour ce faire, vous emploierez une diversité d’outils. Néanmoins, tous les outils ne sont pas disponibles par défaut sur <code>R</code>: vous devrez installer des “boîtes à outils” que sont les <em>librairies</em>. La prochaine section discute l’usage des librairies, après quoi nous passerons à l’analyse de données et la visualisation de données.</p>
-<p>Afin de vous entraîner, il est suggéré de lancer <em>Rstudio</em> et d’exécuter les codes <code>R</code> sur votre machine en même temps que vous parcourez ce tutoriel, afin de vous familiariser avec le langage.</p>
+<p>Afin de vous entraîner, il est suggéré de lancer <em>RStudio</em> et d’exécuter les codes <code>R</code> sur votre machine en même temps que vous parcourez ce tutoriel, afin de vous familiariser avec le langage.</p>
 </section>
 </section>
 <section id="une-librairie" class="level1">
@@ -612,23 +612,23 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
 <span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>tbl <span class="ot">&lt;-</span> <span class="fu">tbl_regression</span>(modele, <span class="at">intercept =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a>tbl</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="ujfwlyomgo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ujfwlyomgo table {
+<div id="dfbrwsnuek" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#dfbrwsnuek table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ujfwlyomgo thead, #ujfwlyomgo tbody, #ujfwlyomgo tfoot, #ujfwlyomgo tr, #ujfwlyomgo td, #ujfwlyomgo th {
+#dfbrwsnuek thead, #dfbrwsnuek tbody, #dfbrwsnuek tfoot, #dfbrwsnuek tr, #dfbrwsnuek td, #dfbrwsnuek th {
   border-style: none;
 }
 
-#ujfwlyomgo p {
+#dfbrwsnuek p {
   margin: 0;
   padding: 0;
 }
 
-#ujfwlyomgo .gt_table {
+#dfbrwsnuek .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -654,12 +654,12 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#ujfwlyomgo .gt_caption {
+#dfbrwsnuek .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ujfwlyomgo .gt_title {
+#dfbrwsnuek .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -671,7 +671,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   border-bottom-width: 0;
 }
 
-#ujfwlyomgo .gt_subtitle {
+#dfbrwsnuek .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -683,7 +683,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   border-top-width: 0;
 }
 
-#ujfwlyomgo .gt_heading {
+#dfbrwsnuek .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -695,13 +695,13 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#ujfwlyomgo .gt_bottom_border {
+#dfbrwsnuek .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ujfwlyomgo .gt_col_headings {
+#dfbrwsnuek .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -716,7 +716,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#ujfwlyomgo .gt_col_heading {
+#dfbrwsnuek .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -736,7 +736,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   overflow-x: hidden;
 }
 
-#ujfwlyomgo .gt_column_spanner_outer {
+#dfbrwsnuek .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -748,15 +748,15 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   padding-right: 4px;
 }
 
-#ujfwlyomgo .gt_column_spanner_outer:first-child {
+#dfbrwsnuek .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ujfwlyomgo .gt_column_spanner_outer:last-child {
+#dfbrwsnuek .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ujfwlyomgo .gt_column_spanner {
+#dfbrwsnuek .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -768,11 +768,11 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   width: 100%;
 }
 
-#ujfwlyomgo .gt_spanner_row {
+#dfbrwsnuek .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ujfwlyomgo .gt_group_heading {
+#dfbrwsnuek .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -798,7 +798,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   text-align: left;
 }
 
-#ujfwlyomgo .gt_empty_group_heading {
+#dfbrwsnuek .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -813,15 +813,15 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   vertical-align: middle;
 }
 
-#ujfwlyomgo .gt_from_md > :first-child {
+#dfbrwsnuek .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ujfwlyomgo .gt_from_md > :last-child {
+#dfbrwsnuek .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ujfwlyomgo .gt_row {
+#dfbrwsnuek .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -840,7 +840,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   overflow-x: hidden;
 }
 
-#ujfwlyomgo .gt_stub {
+#dfbrwsnuek .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -853,7 +853,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   padding-right: 5px;
 }
 
-#ujfwlyomgo .gt_stub_row_group {
+#dfbrwsnuek .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -867,15 +867,15 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   vertical-align: top;
 }
 
-#ujfwlyomgo .gt_row_group_first td {
+#dfbrwsnuek .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ujfwlyomgo .gt_row_group_first th {
+#dfbrwsnuek .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ujfwlyomgo .gt_summary_row {
+#dfbrwsnuek .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -885,16 +885,16 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   padding-right: 5px;
 }
 
-#ujfwlyomgo .gt_first_summary_row {
+#dfbrwsnuek .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ujfwlyomgo .gt_first_summary_row.thick {
+#dfbrwsnuek .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ujfwlyomgo .gt_last_summary_row {
+#dfbrwsnuek .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -904,7 +904,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#ujfwlyomgo .gt_grand_summary_row {
+#dfbrwsnuek .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -914,7 +914,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   padding-right: 5px;
 }
 
-#ujfwlyomgo .gt_first_grand_summary_row {
+#dfbrwsnuek .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -924,7 +924,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#ujfwlyomgo .gt_last_grand_summary_row_top {
+#dfbrwsnuek .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -934,11 +934,11 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#ujfwlyomgo .gt_striped {
+#dfbrwsnuek .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ujfwlyomgo .gt_table_body {
+#dfbrwsnuek .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -947,7 +947,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#ujfwlyomgo .gt_footnotes {
+#dfbrwsnuek .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -961,7 +961,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#ujfwlyomgo .gt_footnote {
+#dfbrwsnuek .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -970,7 +970,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   padding-right: 5px;
 }
 
-#ujfwlyomgo .gt_sourcenotes {
+#dfbrwsnuek .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -984,7 +984,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#ujfwlyomgo .gt_sourcenote {
+#dfbrwsnuek .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -992,72 +992,72 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
   padding-right: 5px;
 }
 
-#ujfwlyomgo .gt_left {
+#dfbrwsnuek .gt_left {
   text-align: left;
 }
 
-#ujfwlyomgo .gt_center {
+#dfbrwsnuek .gt_center {
   text-align: center;
 }
 
-#ujfwlyomgo .gt_right {
+#dfbrwsnuek .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ujfwlyomgo .gt_font_normal {
+#dfbrwsnuek .gt_font_normal {
   font-weight: normal;
 }
 
-#ujfwlyomgo .gt_font_bold {
+#dfbrwsnuek .gt_font_bold {
   font-weight: bold;
 }
 
-#ujfwlyomgo .gt_font_italic {
+#dfbrwsnuek .gt_font_italic {
   font-style: italic;
 }
 
-#ujfwlyomgo .gt_super {
+#dfbrwsnuek .gt_super {
   font-size: 65%;
 }
 
-#ujfwlyomgo .gt_footnote_marks {
+#dfbrwsnuek .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ujfwlyomgo .gt_asterisk {
+#dfbrwsnuek .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ujfwlyomgo .gt_indent_1 {
+#dfbrwsnuek .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ujfwlyomgo .gt_indent_2 {
+#dfbrwsnuek .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ujfwlyomgo .gt_indent_3 {
+#dfbrwsnuek .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ujfwlyomgo .gt_indent_4 {
+#dfbrwsnuek .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ujfwlyomgo .gt_indent_5 {
+#dfbrwsnuek .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ujfwlyomgo .katex-display {
+#dfbrwsnuek .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ujfwlyomgo div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#dfbrwsnuek div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1356,7 +1356,7 @@ MarqueSamsung                    -598.628372 -440.712734</code></pre>
 </div>
 </div>
 </div>
-<p><strong>Rstudio</strong> produira dans le cadran 3 un graphique. Il est possible d’exporter cette image sous fichier <code>.png</code> et de l’enregistrer afin de l’inclure dans un document de traitement de texte.</p>
+<p><strong>RStudio</strong> produira dans le cadran 3 un graphique. Il est possible d’exporter cette image sous fichier <code>.png</code> et de l’enregistrer afin de l’inclure dans un document de traitement de texte.</p>
 
 
 </section>

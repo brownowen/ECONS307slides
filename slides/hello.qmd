@@ -1,7 +1,7 @@
 ---
 title: |
-  ECON-S307:  
-  Séminaire d'économie appliquée - Prix
+  [ECON-S307:  
+  Séminaire d'économie appliquée - Prix](https://brownowen.github.io/ECONS307slides)
 subtitle: "Séance d'introduction" 
 author: "Michele Cincera - Owen Brown"
 date: today
@@ -27,7 +27,7 @@ format:
   
 ---
 
-```{r, verbose = FALSE}
+```{r, echo = FALSE,message=FALSE,warnings=FALSE}
 source("lib.R")
 source("data_forProj.R")
 set.seed(1234)
@@ -40,10 +40,7 @@ dta <- tibble(prix,puissance,poids)
 
 fmla <- prix~ 1000+0.5*puissance-0.10*poids
 
-#| include: false
-knitr::opts_chunk$set(warning = FALSE,
-  error   = FALSE
-)
+
 ```
 
 ## 
@@ -268,7 +265,7 @@ dta %>% select(c("prix","puissance","poids")) %>% dim
 
 Une estimation par la méthode des moindres carrés (OLS) nous donne:
 
-```{r,echo=TRUE}
+```{r,echo=TRUE,warning=FALSE}
 reg <- dta %>% lm(formula= prix ~poids+ puissance-1)  
 reg %>% tidy %>% kbl() %>% kable_styling(font_size = 35) 
 ```

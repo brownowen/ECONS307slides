@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "ECONS-307"
+  title: "**ECONS-307**"
   navbar:
     left:
       - href: slides/index.html

@@ -75,3 +75,56 @@ library(gtsummary)
 tbl <- tbl_regression(preg,intercept = T)
 gt <- as_flex_table(tbl)       # convert to flextable
 flextable::save_as_docx(gt, path = "reg_table.docx")
+
+
+
+#### Testing things : on the car example ----
+
+puissance <- rnorm(5000,10,1)
+poids <- rnorm(5000,5,1)+0.2*puissance
+prix <- 3 + 0.5*puissance - 1*poids+rnorm(5000,0,1)
+dta <- tibble(prix,puissance,poids)
+
+
+
+
+dta %>% lm(formula= prix ~poids)
+gls(model=prix~poids,data=dta)
+reg %>% tidy
+
+bptest(log(prix)~poids,data=dta)
+
+
+# Run standard OLS first
+ols_model <- lm(log(prix) ~ poids, data = dta)
+
+# Test for heteroskedasticity
+bptest(ols_model)  # Breusch-Pagan test
+
+# Get heteroskedasticity-robust standard errors (HC3)
+coeftest(ols_model, vcov = vcovHC(ols_model, type = "HC3"))
+
+
+
+#_______________
+
+
+
+
+reg2 <- dta %>% lm(formula= prix ~poids+ puissance)  
+reg2 %>% tidy 
+
+data <- tibble(poids=dta$poids,
+               res1=reg$residuals^2,
+               res2=reg2$residuals^2,
+               puissance=dta$puissance) %>% 
+  pivot_longer(cols=c(res1,res2), names_to = "group",values_to = "residuals")
+data %>% ggplot(aes(x=poids,y=residuals))+
+  geom_point(color="steelblue")+
+  facet_wrap(~group,labeller = labeller(group = 
+                                          c("res1" = "Modèle 1",
+                                            "res2" = "Modèle 2")))+
+  labs(title = "Comparaison de modèles - Carré des résidus ")  
+
+
+
