@@ -61,7 +61,7 @@ et gratuit. Tel que représenté ci-dessous, **RStudio** affiche 4
 cadrans.
 
 ![Environnement de programmation
-RStudio](/images/RStudio_screenshot.png)
+RStudio](../images/RStudio_screenshot.png)
 
 1.  Le cadran 1 est l'espace du script. C'est là que l'on rédige son
     code.

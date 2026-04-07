@@ -74,3 +74,11 @@ library(gtsummary)
 tbl <- tbl_regression(preg,intercept = T)
 gt <- as_flex_table(tbl)       # convert to flextable
 flextable::save_as_docx(gt, path = "reg_table.docx")
+
+
+
+phonesdf %>% colnames
+
+lm(price~RAM+age+stockage,data=phonesdf) %>% summary
+
+
