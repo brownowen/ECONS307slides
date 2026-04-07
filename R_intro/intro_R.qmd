@@ -66,6 +66,7 @@ RStudio](../images/Rstudio_screenshot.png)
 
 
 
+
 1.  Le cadran 1 est l'espace du script. C'est là que l'on rédige son
     code.
 
