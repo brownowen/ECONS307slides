@@ -8,7 +8,7 @@ toc-depth: 4
 tabsets: true
 author: Owen Brown, Université Libre de Bruxelles 
 author-meta: Owen BROWN (ULB)
-
+theme: pulse
 ---
 
 ```{r,echo=FALSE,message=FALSE,warning=FALSE}
@@ -61,7 +61,7 @@ et gratuit. Tel que représenté ci-dessous, **RStudio** affiche 4
 cadrans.
 
 ![Environnement de programmation
-RStudio](../images/RStudio_screenshot.png)
+RStudio](../images/Rstudio_screenshot.png)
 
 ```{r}
 getwd()
