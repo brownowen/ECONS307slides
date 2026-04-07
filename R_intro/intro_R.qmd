@@ -8,7 +8,7 @@ toc-depth: 4
 tabsets: true
 author: Owen Brown, Université Libre de Bruxelles 
 author-meta: Owen BROWN (ULB)
-theme: pulse
+
 ---
 
 ```{r,echo=FALSE,message=FALSE,warning=FALSE}
@@ -62,6 +62,12 @@ cadrans.
 
 ![Environnement de programmation
 RStudio](../images/RStudio_screenshot.png)
+
+```{r}
+getwd()
+list.files("../images")
+```
+
 
 1.  Le cadran 1 est l'espace du script. C'est là que l'on rédige son
     code.
